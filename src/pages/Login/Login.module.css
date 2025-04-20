@@ -1,0 +1,62 @@
+.loginBox {
+    background-color: var(--branquinho);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    min-width: 320px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .loginBox input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 80%;
+  }
+  
+  .loginBox button {
+    padding: 12px;
+    background-color: var(--verde-01);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .loginBox h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Istok Web' , sans-serif;
+    margin-bottom: 1rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color:var(--allblack);
+  }
+  
+  .loginBox button {
+    font-family: 'Istok Web' , sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 100%;
+    color:var(--allblack);
+    border-radius: 5px;
+    width: 7.35rem;
+    height: 2.325rem;
+    
+  }
+  
+  
