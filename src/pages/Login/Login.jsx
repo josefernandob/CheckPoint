@@ -14,6 +14,7 @@ return (
     
    <input type="text" placeholder="Usuário" />
    <input type="text" placeholder="Senha" />
+   <a href="#">Esqueceu sua senha?</a>
    <button  type="submit">Entrar</button>
 
    </form>
