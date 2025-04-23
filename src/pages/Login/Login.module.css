@@ -62,7 +62,7 @@
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 100%;
-    color:var(--allblack);
+    color:var(--branquinho);
     border-radius: 5px;
     width: 7.35rem;
     height: 2.325rem;
@@ -75,7 +75,46 @@
     font-size: 0.625rem;
     line-height: 100%;
     color: var(--allblack);
-    margin-left: 55%;
-    margin-top: -3%;
+    margin-left: 68%;
+    margin-top: -8%;
   }
+
+.User , .Senha {
+  display: flex;
+  align-items: center; 
+  position: relative;
+ 
+
+}
+
+.User img,
+.Senha img {
+  position: absolute;
+  margin-left: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none; 
+}
+
+.User input,
+.Senha input {
+  padding: 10px 10px 10px 45px
+ 
+}
+
+.User p, 
+.Senha p {
+  position: absolute;
+  left: 35px; 
+  top: 50%;
+  transform: translateY(-85%);
+  margin: 0px;
+  color: var(--verde-01);
+  font-size: 26.5px;
+  pointer-events: none;
+}
+
+
+
 
