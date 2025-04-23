@@ -1,5 +1,4 @@
 import styles from './App.module.css'
-import PlanoFundo from './assets/PlanoFundo.png';
 import { Login } from './pages/Login/Login';
 
 
