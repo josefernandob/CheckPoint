@@ -10,27 +10,37 @@ export function Login() {
     return (
         <form className={styles.loginBox} onSubmit={handleLogin} >
 
-            <h2> CheckPoint</h2>
-
+            <div className={styles.Header}>
+                <img src="/src/assets/Nearpod.svg" />
+                <h2> CheckPoint</h2>
+            </div>
             <div className={styles.Inputs}>
 
-                <div className={styles.User}> 
-            <img src="/src/assets/User.svg" /> 
-                <p> | </p>
-                <input type="text" placeholder="Usuário" />
+                <div className={styles.User}>
+                    <img src="/src/assets/User.svg" />
+                    <p> | </p>
+                    <input type="text" placeholder="Usuário" />
 
                 </div>
 
-                <div className={styles.Senha}> 
-            <img src="/src/assets/Lock.svg" />
-              <p> | </p>
-                <input type="text" placeholder="Senha" />
+                <div className={styles.Senha}>
+                    <img src="/src/assets/Lock.svg" />
+                    <p> | </p>
+                    <input type="text" placeholder="Senha" />
                 </div>
 
             </div>
-            <a href="#">Esqueceu sua senha?</a>
 
-            
+
+            <a href="#" className={styles.linkSenha}>
+
+                Esqueceu sua senha?</a>
+
+
+            <div className={styles.checkboxArea}>
+                <input type="checkbox" id="manterConectado" />
+                <label htmlFor="manterConectado">Manter conectado</label>
+            </div>
 
 
             <button type="submit">Entrar</button>

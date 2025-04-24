@@ -1,89 +1,91 @@
 .loginBox {
-    background-color: var(--branquinho);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    min-width: 320px;
-  
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  
-   
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  background-color: var(--branquinho);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  min-width: 320px;
 
-  .Inputs {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-  }
-  
-  .Inputs input {
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-bottom: 5%;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    width: 17.4375rem;
-    background-color: #38CF564D;
-    color: rgba(0, 0, 0, 0.35);
-    font-family: 'Istok Web', sans-serif;
-  }
-  
-  .loginBox button {
-    padding: 12px;
-    background-color: var(--verde-01);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .loginBox h2 {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 400;
-    font-family: 'Istok Web' , sans-serif;
-    margin-bottom: 1rem;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color:var(--allblack);
-  }
-  
-  .loginBox button {
-    font-family: 'Istok Web' , sans-serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    line-height: 100%;
-    color:var(--branquinho);
-    border-radius: 5px;
-    width: 7.35rem;
-    height: 2.325rem;
-    
-  }
-  
-  .loginBox a {
-    font-family: 'Istok Web', sans-serif;
-    font-weight: 400;
-    font-size: 0.625rem;
-    line-height: 100%;
-    color: var(--allblack);
-    margin-left: 68%;
-    margin-top: -8%;
-  }
-
-.User , .Senha {
   display: flex;
-  align-items: center; 
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Inputs input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 5%;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  width: 17.4375rem;
+  background-color: #38CF564D;
+  color: rgba(0, 0, 0, 0.35);
+  font-family: 'Istok Web', sans-serif;
+}
+
+.loginBox button {
+  padding: 12px;
+  background-color: var(--verde-01);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.loginBox h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Istok Web', sans-serif;
+  margin-bottom: 1rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--allblack);
+}
+
+.loginBox button {
+  font-family: 'Istok Web', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--branquinho);
+  border-radius: 5px;
+  width: 7.35rem;
+  height: 2.325rem;
+
+}
+
+.linkSenha {
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 100%;
+  color: var(--allblack);
+  margin-left: 68%;
+  margin-top: -8%;
+  cursor: pointer !important;
+}
+
+.User,
+.Senha {
+  display: flex;
+  align-items: center;
   position: relative;
- 
+
 
 }
 
@@ -94,19 +96,18 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .User input,
 .Senha input {
   padding: 10px 10px 10px 45px
- 
 }
 
-.User p, 
+.User p,
 .Senha p {
   position: absolute;
-  left: 35px; 
+  left: 35px;
   top: 50%;
   transform: translateY(-85%);
   margin: 0px;
@@ -115,6 +116,19 @@
   pointer-events: none;
 }
 
+.Header {
+  display: flex;
+  gap: 5px;
+}
 
-
-
+.checkboxArea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Istok Web', sans-serif;
+  font-size: 0.75rem;
+  color: var(--allblack);
+  align-self: flex-start; /* opcional: deixa ele alinhado à esquerda */
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
