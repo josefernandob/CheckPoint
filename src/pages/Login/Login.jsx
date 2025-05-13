@@ -36,11 +36,10 @@ export function Login() {
 
                 Esqueceu sua senha?</a>
 
-
-            <div className={styles.checkboxArea}>
-                <input type="checkbox" id="manterConectado" />
-                <label htmlFor="manterConectado">Manter conectado</label>
-            </div>
+            <label className={styles.checkboxArea}>
+                <input type="checkbox" />
+                Manter conectado
+            </label>
 
 
             <button type="submit">Entrar</button>

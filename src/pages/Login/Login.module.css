@@ -117,8 +117,10 @@
 }
 
 .Header {
-  display: flex;
+   display: flex;
   gap: 5px;
+  align-items: center;
+
 }
 
 .checkboxArea {
@@ -127,11 +129,28 @@
   font-family: 'Istok Web', sans-serif;
   font-size: 0.75rem;
   color: var(--allblack);
-  align-self: flex-start; /* opcional: deixa ele alinhado à esquerda */
+  align-self: flex-start;
   margin-top: -25px;
- 
+  cursor: pointer; 
+  gap: 8px; 
+  appearance: none;
 }
+
 .checkboxArea input {
-  border: 0.5px solid rgba(0, 0, 0, 0.46);
-  background: #FFF;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  accent-color: var(--verde-01); 
+}
+
+.Header img {
+  pointer-events: none; 
+  user-select: none; 
+}
+
+.Header h2 {
+  pointer-events: none; 
+  user-select: none; 
+  margin: 0; 
+
 }
