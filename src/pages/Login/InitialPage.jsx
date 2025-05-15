@@ -3,43 +3,60 @@ import styles from './InitialPage.module.css';
 
 export default function InitialPage() {
   return (
-    <div>
+    <div className={styles.appContainer}>
+      {/* Header */}
       <div className={styles.header}>
-        <img src="/src/assets/Nearpod.svg" />
-        CheckPoint
+        <div className={styles.headerLeft}>
+          <img src="/src/assets/Nearpod.svg" className={styles.logo} />
+          <span className={styles.logoText}>CheckPoint</span>
+        </div>
+        <div className={styles.userInfo}>
+          <span className={styles.userName}>Rodrigo Vieira de Morais</span>
+          <div className={styles.userAvatar}>
+            <i className="fas fa-user-circle"></i>
+          </div>
+        </div>
       </div>
 
+      {/* Main Container */}
       <div className={styles.container}>
+        {/* Sidebar */}
         <div className={styles.sidebar}>
-          <div className={styles.menuItem}>
-            <i className="fas fa-calendar-alt"></i> Registrar Ponto
-          </div>
-          <div className={styles.menuItem}>
-            <i className="fas fa-calculator"></i> Banco de Horas
-          </div>
-          <div className={styles.menuItem}>
-            <i className="fas fa-file-alt"></i> Relatório
+          <div className={styles.topMenu}>
+            <div className={styles.menuItem}>
+              <i className="fas fa-calendar-alt"></i> Registrar Ponto
+            </div>
+            <div className={styles.menuItem}>
+              <i className="fas fa-calculator"></i> Banco de Horas
+            </div>
+            <div className={styles.menuItem}>
+              <i className="fas fa-file-alt"></i> Relatório
+            </div>
+            <div className={styles.menuSpacer}></div>
           </div>
 
           <div className={styles.profileSection}>
-            <div className={styles.menuItem}>
+            <div className={styles.profileHeader}>
               <i className="fas fa-user"></i> Perfil
             </div>
-            <div className={styles.menuItem}>
+            <div className={styles.profileMenuItem}>
               <i className="fas fa-cog"></i> Configurações
             </div>
-            <div className={`${styles.menuItem} ${styles.lastItem}`}>
+            <div className={styles.profileMenuItem}>
               <i className="fas fa-sign-out-alt"></i> Sair
             </div>
           </div>
         </div>
 
+        {/* Main Content */}
         <div className={styles.mainContent}>
           <div className={styles.card}>
-            <div className={styles.sectionTitle}>
-              <i className="fas fa-calendar-day"></i> Jornada de hoje
+            <div className={styles.journeyHeader}>
+              <div className={styles.sectionTitle}>
+                <i className="fas fa-calendar-day"></i> Jornada de hoje
+              </div>
+              <div className={styles.date}>Terça-Feira 22 de Março de 2025</div>
             </div>
-            <div className={styles.date}>Terça-Feira 22 de Março de 2025</div>
 
             <div className={styles.statusContainer}>
               <div className={styles.status}>ACOMPANHAMENTO DO EXPEDIENTE</div>
@@ -66,29 +83,35 @@ export default function InitialPage() {
             <div className={styles.sectionTitle}>
               <i className="fas fa-stopwatch"></i> DETALHES DAS HORAS
             </div>
-            <div className={styles.detailItem}>
-              <div className={styles.detailText}>
-                <i className={`fas fa-briefcase ${styles.detailIcon}`}></i> Trabalhando
+            
+            <div className={styles.hoursGrid}>
+              <div className={styles.hoursItem}>
+                <div className={styles.detailText}>
+                  <i className={`fas fa-briefcase ${styles.detailIcon}`}></i> Trabalhando
+                </div>
+                <div className={styles.hoursValue}>05:00</div>
               </div>
-              <span>05:00</span>
-            </div>
-            <div className={styles.detailItem}>
-              <div className={styles.detailText}>
-                <i className={`fas fa-plus-circle ${styles.detailIcon}`}></i> Horas extras
+              
+              <div className={styles.hoursItem}>
+                <div className={styles.detailText}>
+                  <i className={`fas fa-plus-circle ${styles.detailIcon}`}></i> Horas extras
+                </div>
+                <div className={styles.hoursValue}>00:00</div>
               </div>
-              <span>00:00</span>
-            </div>
-            <div className={styles.detailItem}>
-              <div className={styles.detailText}>
-                <i className={`fas fa-coffee ${styles.detailIcon}`}></i> Intervalo
+              
+              <div className={styles.hoursItem}>
+                <div className={styles.detailText}>
+                  <i className={`fas fa-coffee ${styles.detailIcon}`}></i> Intervalo
+                </div>
+                <div className={styles.hoursValue}>01:30</div>
               </div>
-              <span>01:30</span>
-            </div>
-            <div className={styles.detailItem}>
-              <div className={styles.detailText}>
-                <i className={`fas fa-times-circle ${styles.detailIcon}`}></i> Faltas
+              
+              <div className={styles.hoursItem}>
+                <div className={styles.detailText}>
+                  <i className={`fas fa-times-circle ${styles.detailIcon}`}></i> Faltas
+                </div>
+                <div className={styles.hoursValue}>00:00</div>
               </div>
-              <span>00:00</span>
             </div>
           </div>
         </div>
