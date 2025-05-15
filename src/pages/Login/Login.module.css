@@ -59,7 +59,8 @@
   margin-top: 36px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: var(--allblack);
+  color: var(--allblack);     
+  
 }
 
 .loginBox button {
