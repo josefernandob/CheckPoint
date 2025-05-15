@@ -1,12 +1,43 @@
-# React + Vite
+# 🕒 CheckPoint
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Ponto Top** é um sistema de controle de ponto para funcionários, que permite registro de jornada, visualização de banco de horas, relatórios e controle via reconhecimento facial.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Descrição
 
-## Expanding the ESLint configuration
+Este projeto tem como objetivo facilitar o controle de horas trabalhadas pelos funcionários de uma empresa. A aplicação oferece funcionalidades como:
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Registro de ponto com **reconhecimento facial**
+- Tela inicial com informações da jornada atual
+- Visualização de **banco de horas** e **horas extras**
+- Geração de **relatórios**
+- **Autenticação** (cadastro, login e recuperação de senha)
+
+---
+
+## 🧑‍💻 Tecnologias Utilizadas
+
+- **React.js** – Biblioteca JavaScript para construção da interface
+- **JavaScript (ES6+)** – Linguagem principal da aplicação
+- **CSS3** – Estilização da interface
+- **HTML5** – Estrutura base da aplicação
+- **Font Awesome** – Biblioteca de ícones
+
+---
+
+## 🖼️ Telas do Sistema
+
+- **Tela de cadastro de usuário**
+
+- **Tela de login**
+
+- **Tela de recuperação de senha**
+
+- **Tela inicial com jornada do dia**
+
+- **Tela para registro de ponto com reconhecimento facial**
+
+- **Tela de banco de horas**
+
+- **Tela com lista de pontos registrados**
