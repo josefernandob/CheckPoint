@@ -1,9 +1,10 @@
 .loginBox {
   background-color: var(--branquinho);
-  padding: 40px;
+  padding: 30px;
   border-radius: 15px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  min-width: 320px;
+  width: 442px;
+  min-height: 320px;
 
   display: flex;
   flex-direction: column;
@@ -18,18 +19,21 @@
 }
 
 .Inputs {
+  margin-right: 50px ;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  box-sizing: border-box;
+  
 }
 
 .Inputs input {
-  padding: 12px;
+   padding: 8px 12px 8px 45px;
   border: 1px solid #ccc;
   margin-bottom: 5%;
   border-radius: 6px;
   font-size: 0.75rem;
   width: 17.4375rem;
+  height: 16px;
   background-color: #38CF564D;
   color: rgba(0, 0, 0, 0.35);
   font-family: 'Istok Web', sans-serif;
@@ -47,11 +51,12 @@
 }
 
 .loginBox h2 {
+  
   text-align: center;
   font-size: 1.5rem;
   font-weight: 400;
   font-family: 'Istok Web', sans-serif;
-  margin-bottom: 1rem;
+  margin-top: 36px;
   line-height: 100%;
   letter-spacing: 0%;
   color: var(--allblack);
@@ -66,6 +71,7 @@
   border-radius: 5px;
   width: 7.35rem;
   height: 2.325rem;
+  margin-right:-250px;
 
 }
 
@@ -75,8 +81,8 @@
   font-size: 0.625rem;
   line-height: 100%;
   color: var(--allblack);
-  margin-left: 68%;
-  margin-top: -8%;
+  margin-left: 42%;
+  margin-top: -5%;
   cursor: pointer;
 }
 
@@ -120,10 +126,12 @@
    display: flex;
   gap: 5px;
   align-items: center;
+  margin-bottom: 30px;
 
 }
 
 .checkboxArea {
+  
   display: flex;
   align-items: center;
   font-family: 'Istok Web', sans-serif;
@@ -131,19 +139,22 @@
   color: var(--allblack);
   align-self: flex-start;
   margin-top: -25px;
+  margin-left: 32px;
   cursor: pointer; 
-  gap: 8px; 
+  gap: 5px; 
   appearance: none;
 }
 
 .checkboxArea input {
-  width: 13px;
-  height: 13px;
+  border: 0.5px solid rgba(0, 0, 0, 0.46);
+  width: 14px;
+  height: 14px;
   cursor: pointer;
   accent-color: var(--verde-01); 
 }
 
 .Header img {
+  
   pointer-events: none; 
   user-select: none; 
 }
@@ -154,3 +165,10 @@
   margin: 0; 
 
 }
+
+.Header,
+.Inputs {
+  align-self: flex-start;
+  margin-left: 32px;
+}
+
