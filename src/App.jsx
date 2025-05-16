@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styles from './App.module.css';
 import { Login } from './pages/Login/Login';
 import InitialPage from './pages/Login/InitialPage';
+import PointRegister from './pages/Login/PointRegister';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/initial" element={<InitialPage />} />
+          <Route path="/registrar" element={<PointRegister />} />
         </Routes>
       </Router>
     </div>

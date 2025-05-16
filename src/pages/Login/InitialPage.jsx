@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './InitialPage.module.css';
 
 export default function InitialPage() {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.appContainer}>
       {/* Header */}
@@ -23,7 +26,11 @@ export default function InitialPage() {
         {/* Sidebar */}
         <div className={styles.sidebar}>
           <div className={styles.topMenu}>
-            <div className={styles.menuItem}>
+            <div
+              className={styles.menuItem}
+              onClick={() => navigate('/registrar')}
+              style={{ cursor: 'pointer' }}
+            >
               <i className="fas fa-calendar-alt"></i> Registrar Ponto
             </div>
             <div className={styles.menuItem}>
@@ -42,7 +49,11 @@ export default function InitialPage() {
             <div className={styles.profileMenuItem}>
               <i className="fas fa-cog"></i> Configurações
             </div>
-            <div className={styles.profileMenuItem}>
+            <div
+              className={styles.profileMenuItem}
+              onClick={() => navigate('/')}
+              style={{ cursor: 'pointer' }}
+            >
               <i className="fas fa-sign-out-alt"></i> Sair
             </div>
           </div>
@@ -83,7 +94,7 @@ export default function InitialPage() {
             <div className={styles.sectionTitle}>
               <i className="fas fa-stopwatch"></i> DETALHES DAS HORAS
             </div>
-            
+
             <div className={styles.hoursGrid}>
               <div className={styles.hoursItem}>
                 <div className={styles.detailText}>
@@ -91,21 +102,21 @@ export default function InitialPage() {
                 </div>
                 <div className={styles.hoursValue}>05:00</div>
               </div>
-              
+
               <div className={styles.hoursItem}>
                 <div className={styles.detailText}>
                   <i className={`fas fa-plus-circle ${styles.detailIcon}`}></i> Horas extras
                 </div>
                 <div className={styles.hoursValue}>00:00</div>
               </div>
-              
+
               <div className={styles.hoursItem}>
                 <div className={styles.detailText}>
                   <i className={`fas fa-coffee ${styles.detailIcon}`}></i> Intervalo
                 </div>
                 <div className={styles.hoursValue}>01:30</div>
               </div>
-              
+
               <div className={styles.hoursItem}>
                 <div className={styles.detailText}>
                   <i className={`fas fa-times-circle ${styles.detailIcon}`}></i> Faltas
