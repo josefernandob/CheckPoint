@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './Cadastro.module.css'; // Import corrigido
+import styles from './Cadastro.module.css';
 
 export default function Cadastro() {
   return (
     <div className={styles.pageWrapper}>
       <form className={styles.cadastroBox}>
         <div className={styles.Header}>
-          <img src="icon1.png" alt="Logo" />
+          <img src="/src/assets/Nearpod.svg" alt="Logo Nearpod" className={styles.logo} />
           <h2>CheckPoint</h2>
         </div>
 
@@ -17,22 +17,22 @@ export default function Cadastro() {
 
         <div className={styles.Inputs}>
           <div className={styles.InputGroup}>
-            <img src="https://lucide.dev/icons/user.svg" alt="Usuário" />
+            <img src="/src/assets/pessoa.png" alt="Usuário" />
             <input type="text" placeholder="Nome completo" required />
           </div>
 
           <div className={styles.InputGroup}>
-            <img src="https://lucide.dev/icons/mail.svg" alt="Email" />
+            <img src="/src/assets/pessoa.png" alt="Email" />
             <input type="email" placeholder="Email" required />
           </div>
 
           <div className={styles.InputGroup}>
-            <img src="https://lucide.dev/icons/lock.svg" alt="Senha" />
+            <img src="/src/assets/cadeado-seguro.png" alt="Senha" />
             <input type="password" placeholder="Senha" required />
           </div>
 
           <div className={styles.InputGroup}>
-            <img src="https://lucide.dev/icons/lock.svg" alt="Confirme a senha" />
+            <img src="/src/assets/cadeado-seguro.png" alt="Confirme a senha" />
             <input type="password" placeholder="Repita sua senha" required />
           </div>
         </div>

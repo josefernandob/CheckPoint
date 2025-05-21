@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+
 :root {
   --branquinho: #ffffff;
   --verde-01: #38CF56;
@@ -32,22 +34,29 @@
   gap: 15px;
 }
 
+/* --- ÁREA ATUALIZADA PARA MATCH COM LOGIN --- */
 .Header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  justify-content: center;
+  gap: 10px; /* Igual ao login */
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .Header img {
-  width: 24px;
-  height: 24px;
+  width: 40px; /* Igual ao login */
+  height: auto; /* Mantém proporção */
 }
 
 .Header h2 {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Igual ao login (24px) */
   color: var(--allblack);
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 400;
+  margin: 0;
 }
+/* ------------------------------------------- */
 
 .Title {
   text-align: left;
@@ -58,6 +67,8 @@
   font-size: 1.2rem;
   color: var(--allblack);
   margin-bottom: 5px;
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 400;
 }
 
 .Title p {
@@ -100,6 +111,7 @@
   width: 20px;
   height: 20px;
   pointer-events: none;
+  filter: brightness(0.8);
 }
 
 button {
