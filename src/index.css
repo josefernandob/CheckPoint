@@ -1,0 +1,11 @@
+/* Reset mínimo global */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Evita heranças indesejadas de estilo */
+*, *::before, *::after {
+  box-sizing: inherit;
+}

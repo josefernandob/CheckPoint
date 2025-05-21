@@ -1,90 +1,47 @@
 .loginBox {
   background-color: var(--branquinho);
-  padding: 30px;
+  padding: 40px;
   border-radius: 15px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 442px;
+  width: 100%;
+  max-width: 442px ; 
   min-height: 320px;
-
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
-
-
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.Inputs {
-  margin-right: 50px ;
+.Header {
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.Inputs input {
-   padding: 8px 12px 8px 45px;
-  border: 1px solid #ccc;
-  margin-bottom: 5%;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  width: 17.4375rem;
-  height: 16px;
-  background-color: #38CF564D;
-  color: rgba(0, 0, 0, 0.35);
+.Header img {
+  width: 40px;
+  height: auto;
+}
+
+.Header h2 {
   font-family: 'Istok Web', sans-serif;
-}
-
-.loginBox button {
-  padding: 12px;
-  background-color: var(--verde-01);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.loginBox h2 {
-  
-  text-align: center;
   font-size: 1.5rem;
   font-weight: 400;
-  font-family: 'Istok Web', sans-serif;
-  margin-top: 36px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: var(--allblack);     
-  
-}
-
-.loginBox button {
-  font-family: 'Istok Web', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 100%;
-  color: var(--branquinho);
-  border-radius: 5px;
-  width: 7.35rem;
-  height: 2.325rem;
-  margin-right:-250px;
-
-}
-
-.linkSenha {
-  font-family: 'Istok Web', sans-serif;
-  font-weight: 400;
-  font-size: 0.625rem;
-  line-height: 100%;
   color: var(--allblack);
-  margin-left: 42%;
-  margin-top: -5%;
-  cursor: pointer;
+  margin: 0;
+}
+
+.Inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
 }
 
 .User,
@@ -92,84 +49,99 @@
   display: flex;
   align-items: center;
   position: relative;
-
-
+  width: 100%;
 }
 
 .User img,
 .Senha img {
   position: absolute;
-  margin-left: 10px;
-  transform: translateY(-50%);
+  left: 15px;
   width: 20px;
   height: 20px;
-  pointer-events: none;
-}
-
-.User input,
-.Senha input {
-  padding: 10px 10px 10px 45px
 }
 
 .User p,
 .Senha p {
   position: absolute;
-  left: 35px;
-  top: 50%;
-  transform: translateY(-85%);
-  margin: 0px;
+  left: 45px;
   color: var(--verde-01);
-  font-size: 26.5px;
-  pointer-events: none;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.Header {
-   display: flex;
-  gap: 5px;
-  align-items: center;
-  margin-bottom: 30px;
-
+.User input,
+.Senha input {
+  width: 100%;
+  padding: 12px 12px 12px 60px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: rgba(56, 207, 86, 0.3);
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'Istok Web', sans-serif;
 }
 
-.checkboxArea {
-  
+.linksContainer {
+  width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  margin-top: -15px;
+}
+
+.linkSenha,
+.cadas {
   font-family: 'Istok Web', sans-serif;
   font-size: 0.75rem;
   color: var(--allblack);
-  align-self: flex-start;
-  margin-top: -25px;
-  margin-left: 32px;
-  cursor: pointer; 
-  gap: 5px; 
-  appearance: none;
+  text-decoration: none;
+}
+
+.linkSenha:hover,
+.cadas:hover {
+  text-decoration: underline;
+}
+
+.checkboxArea {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Istok Web', sans-serif;
+  font-size: 0.85rem;
+  color: var(--allblack);
+  margin-left: 5px;
+    margin-top: -50px;
 }
 
 .checkboxArea input {
-  border: 0.5px solid rgba(0, 0, 0, 0.46);
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--verde-01);
   cursor: pointer;
-  accent-color: var(--verde-01); 
 }
 
-.Header img {
-  
-  pointer-events: none; 
-  user-select: none; 
+.loginBox button {
+  padding: 12px 24px;
+  background-color: var(--verde-01);
+  color: var(--branquinho);
+  border: none;
+  border-radius: 6px;
+  font-family: 'Istok Web', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
 }
 
-.Header h2 {
-  pointer-events: none; 
-  user-select: none; 
-  margin: 0; 
-
+.loginBox button:hover {
+  background-color: #2fa84e;
 }
 
-.Header,
-.Inputs {
-  align-self: flex-start;
-  margin-left: 32px;
+@media (max-width: 480px) {
+  .loginBox {
+    padding: 30px 20px;
+    width: 90%;
+  }
 }
-
