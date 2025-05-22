@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './PointRegister.module.css';
 
 export default function PointRegister() {
   const navigate = useNavigate();
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  // Atualiza o relógio a cada segundo
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+
+  // Formata a hora com os dois pontos piscando
+  const formatTime = (date) => {
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+    
+    return (
+      <>
+        {hours}
+        <span className={styles.colon}>:</span>
+        {minutes}
+        <span className={styles.colon}>:</span>
+        {seconds}
+      </>
+    );
+  };
+
+  // Formata a data em português
+  const formatDate = (date) => {
+    return date.toLocaleDateString('pt-BR', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'America/Sao_Paulo'
+    });
+  };
 
   return (
     <div className={styles.appContainer}>
@@ -67,11 +105,11 @@ export default function PointRegister() {
             </div>
 
             <div className={styles.Hour}>
-              <p>07:30:05</p>
+              <p>{formatTime(currentTime)}</p>
             </div>
 
             <div className={styles.data}>
-              <p>Terça-Feira 22 de Março de 2025</p>
+              <p>{formatDate(currentTime)}</p>
             </div>
           </div>
 

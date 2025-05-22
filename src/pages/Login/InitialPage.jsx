@@ -1,16 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './InitialPage.module.css';
 
 export default function InitialPage() {
   const navigate = useNavigate();
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  // Atualiza o relógio a cada segundo
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+
+  // Formata a data em português
+  const formatDate = (date) => {
+    return date.toLocaleDateString('pt-BR', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'America/Sao_Paulo'
+    });
+  };
+
+  // Calcula o tempo restante até às 17:00
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const target = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      17, 0, 0 // 17:00:00
+    );
+    
+    // Se já passou das 17:00, mostra 00:00
+    if (now > target) {
+      return '00:00';
+    }
+    
+    const diff = target - now;
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  };
 
   return (
     <div className={styles.appContainer}>
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.headerLeft}>
-          <img src="/src/assets/Nearpod.svg" className={styles.logo} />
+          <img src="/src/assets/Nearpod.svg" className={styles.logo} alt="Logo" />
           <span className={styles.logoText}>CheckPoint</span>
         </div>
         <div className={styles.userInfo}>
@@ -66,7 +109,7 @@ export default function InitialPage() {
               <div className={styles.sectionTitle}>
                 <i className="fas fa-calendar-day"></i> Jornada de hoje
               </div>
-              <div className={styles.date}>Terça-Feira 22 de Março de 2025</div>
+              <div className={styles.date}>{formatDate(currentTime)}</div>
             </div>
 
             <div className={styles.statusContainer}>
@@ -85,7 +128,7 @@ export default function InitialPage() {
                 <div className={styles.sectionTitle}>
                   <i className="fas fa-hourglass-half"></i> Tempo restante
                 </div>
-                <div className={styles.timeDisplay}>05:30</div>
+                <div className={styles.timeDisplay}>{calculateTimeLeft()}</div>
               </div>
             </div>
           </div>
