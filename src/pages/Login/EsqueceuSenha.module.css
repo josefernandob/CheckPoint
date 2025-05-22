@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+
+:root {
+    --branquinho: #ffffff;
+    --verde-01: #38CF56;
+    --verde-02: #2db149;
+    --allblack: #000000;
+}
+
+.pageWrapper {
+    background: url('./PlanoFundo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.cadastroBox {
+    background-color: var(--branquinho);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 442px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.Header img {
+    width: 40px;
+    height: auto;
+}
+
+.Header h2 {
+    font-size: 1.5rem;
+    color: var(--allblack);
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.instruction {
+    color: var(--allblack);
+    font-family: "Istok Web";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 380px;
+}
+
+.inst2 {
+    color: var(--allblack);
+    font-family: "Istok Web";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 380px;
+}
+
+.InputGroup {
+    position: relative;
+    width: 380px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: rgba(56, 207, 86, 0.3);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.InputGroup img {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    filter: brightness(0.8);
+}
+
+.InputGroup p {
+    color: var(--verde-01);
+    font-size: 1.2rem;
+    margin: 0;
+    user-select: none;
+}
+
+.InputGroup input {
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 44px;
+    width: 330px;
+    font-size: 0.9rem;
+    color: var(--allblack);
+    font-family: 'Istok Web', sans-serif;
+    padding-left: 0;
+}
+
+.InputGroup input::placeholder {
+    color: rgba(0, 0, 0, 0.35);
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 6px;
+    width: 380px;
+    justify-content: flex-end;
+    margin-top: -10px;
+}
+
+.buttonCancelar,
+.buttonEnviar {
+    width: 95px;
+    height: 34px;
+    border-radius: 5px;
+    font-family: 'Istok Web', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonCancelar {
+    background: rgba(71, 166, 90, 0.50);
+    color: var(--allblack);
+}
+
+.buttonEnviar {
+    background-color: var(--verde-01);
+    color: var(--allblack);
+}
+
+.buttonEnviar:hover {
+    background-color: var(--verde-02);
+}

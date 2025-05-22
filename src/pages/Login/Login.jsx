@@ -1,7 +1,6 @@
 import styles from './Login.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 export function Login() {
     const navigate = useNavigate();
@@ -50,8 +49,8 @@ export function Login() {
             </div>
 
             <div className={styles.linksContainer}>
-                <a href="#" className={styles.linkSenha}>Esqueceu sua senha?</a>
-              <Link to="/Cadastro" className={styles.cadas}>Não tem conta? Cadastre-se</Link>
+                <Link to="/esqueceu-senha" className={styles.linkSenha}>Esqueceu sua senha?</Link>
+                <Link to="/Cadastro" className={styles.cadas}>Não tem conta? Cadastre-se</Link>
             </div>
 
             <label className={styles.checkboxArea}>

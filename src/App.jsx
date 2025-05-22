@@ -3,8 +3,8 @@ import styles from './App.module.css';
 import { Login } from './pages/Login/Login';
 import InitialPage from './pages/Login/InitialPage';
 import PointRegister from './pages/Login/PointRegister';
-import  Cadastro from './pages/Login/Cadastro'; // Importe o componente Cadastro
-
+import  Cadastro from './pages/Login/Cadastro'; 
+import EsqueceuSenha from './pages/Login/EsqueceuSenha'; 
 function App() {
   return (
     <div className={styles.back}>
@@ -13,7 +13,8 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/initial" element={<InitialPage />} />
           <Route path="/registrar" element={<PointRegister />} />
-          <Route path="/Cadastro" element={<Cadastro />} /> {/* Nova rota */}
+          <Route path="/Cadastro" element={<Cadastro />} /> 
+          <Route path="/esqueceu-senha" element={<EsqueceuSenha />} />
         </Routes>
       </Router>
     </div>
