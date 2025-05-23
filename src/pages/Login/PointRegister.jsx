@@ -72,10 +72,13 @@ export default function PointRegister() {
               <i className="fas fa-calendar-alt"></i> Registrar Ponto
             </div>
             <div className={styles.menuItem}>
-              <i className="fas fa-calculator"></i> Banco de Horas
+              <i className="fas fa-stopwatch"></i> Banco de Horas
             </div>
             <div className={styles.menuItem}>
               <i className="fas fa-file-alt"></i> Relatório
+            </div>
+             <div className={styles.menuItem}>
+              <i className=" fas fa-calculator"></i> Corrigir Ponto
             </div>
             <div className={styles.menuSpacer}></div>
           </div>

@@ -5,13 +5,15 @@
   --verde-01: #38CF56;
   --verde-02: #2db149;
   --allblack: #000000;
+  --cinza-placeholder: rgba(0, 0, 0, 0.35);
+  --fundo-input: rgba(56, 207, 86, 0.3);
 }
 
 .pageWrapper :global(*) {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Istok Web', sans-serif; 
 }
 
 .pageWrapper {
@@ -21,6 +23,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px; 
 }
 
 .cadastroBox {
@@ -28,84 +31,90 @@
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 442px;
+  width: 100%;
+  max-width: 442px; 
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px; 
 }
 
-/* --- ÁREA ATUALIZADA PARA MATCH COM LOGIN --- */
 .Header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Igual ao login */
-  margin-bottom: 20px;
-  width: 100%;
+  gap: 10px;
+  margin-bottom: 10px; 
 }
 
 .Header img {
-  width: 40px; /* Igual ao login */
-  height: auto; /* Mantém proporção */
+  width: 40px;
+  height: 40px; 
+  object-fit: contain;
 }
 
 .Header h2 {
-  font-size: 1.5rem; /* Igual ao login (24px) */
+  font-size: 1.5rem;
   color: var(--allblack);
-  font-family: 'Istok Web', sans-serif;
   font-weight: 400;
   margin: 0;
 }
-/* ------------------------------------------- */
 
 .Title {
   text-align: left;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .Title h2 {
-  font-size: 1.2rem;
+  font-size: 1.25rem; 
   color: var(--allblack);
-  margin-bottom: 5px;
-  font-family: 'Istok Web', sans-serif;
-  font-weight: 400;
+  margin-bottom: 8px; 
+  font-weight: 700; 
 }
 
 .Title p {
-  font-size: 0.75rem;
+  font-size: 0.8rem; 
   color: var(--allblack);
   opacity: 0.8;
+  line-height: 1.4;
 }
 
 .Inputs {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px; 
 }
 
 .InputGroup {
   position: relative;
+  width: 100%;
 }
 
 .InputGroup input {
   width: 100%;
-  padding: 10px 10px 10px 42px;
+  padding: 12px 12px 12px 42px; 
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  background-color: rgba(56, 207, 86, 0.3);
+  border-radius: 8px; 
+  font-size: 0.85rem; 
+  background-color: var(--fundo-input);
   color: var(--allblack);
-  height: 36px;
+  height: 40px; /* Aumentei a altura */
+  transition: border-color 0.3s ease;
+}
+
+.InputGroup input:focus {
+  outline: none;
+  border-color: var(--verde-01);
 }
 
 .InputGroup input::placeholder {
-  color: rgba(0, 0, 0, 0.35);
+  color: var(--cinza-placeholder);
+  font-size: 0.8rem;
 }
 
 .InputGroup img {
   position: absolute;
-  left: 10px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
@@ -114,19 +123,30 @@
   filter: brightness(0.8);
 }
 
+
 button {
   padding: 12px;
   background-color: var(--verde-01);
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem; 
   cursor: pointer;
   width: 100%;
   margin-top: 10px;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  height: 44px; 
+  font-weight: 600; 
+  letter-spacing: 0.5px; 
+  text-transform: uppercase; 
 }
 
 button:hover {
   background-color: var(--verde-02);
+  transform: translateY(-1px); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: translateY(0);
 }

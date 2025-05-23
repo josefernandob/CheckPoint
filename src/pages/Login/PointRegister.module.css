@@ -1,6 +1,7 @@
 /* Global Styles */
 .appContainer {
   font-size: 18px;
+  font-family: "Istok Web", sans-serif;
 }
 
 /* Header Styles */
@@ -8,7 +9,6 @@
   background-color: #38CF56;
   padding: 0 25px;
   color: #000;
-  font-family: "Istok Web", sans-serif;
   height: 75px;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 .headerLeft {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .logo {
@@ -141,52 +141,56 @@
   background-color: #f8f9fa;
 }
 
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
+/* Ponto Styles */
 .Ppoint {
   width: 986px;
   height: 53px;
-  flex-shrink: 0;
   border-radius: 10px;
   background: #FFF;
   display: flex;
   align-items: center;     
-  margin: 0 auto; 
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .Ppoint p {
   margin-left: 30px;
+  font-size: 18px;
+  color: #333;
 }
 
 .Hour {
   width: 986px;
   height: 186px;
-  flex-shrink: 0;
   border-radius: 10px;
   background: #FFF;
   display: flex;              
   align-items: center;        
-  justify-content: center;    
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .Hour p {
   color: #000;
-  font-family: "Istok Web";
   font-size: 96px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
-  margin: 0; 
+  margin: 0;
 }
 
 .data {
-  margin-top: -50px;
-  flex-shrink: 0;
+  margin-top: 20px;
   color: rgba(0, 0, 0, 0.60);
-  font-family: "Istok Web";
   font-size: 20px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   display: flex;              
   align-items: center;        
   justify-content: center;
@@ -198,48 +202,35 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-
 }
 
 .txt {
   display: flex;              
   align-items: center;        
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 30px;
   color: #000;
-  font-family: "Istok Web";
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
 }
-
 
 .numberGrid {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 70px); /* 4 colunas de 70px */
-  gap: 30px; /* espaçamento entre os quadrados */
-  display: flex;              
-  align-items: center;        
+  grid-template-columns: repeat(4, 70px);
+  gap: 30px;
   justify-content: center;
 }
 
 .number {
   width: 70px;
   height: 65px;
-  flex-shrink: 0;
   border-radius: 10px;
   border: 5px solid #38CF56;
   background: rgba(71, 166, 90, 0.00);
-  
   color: #000;
-  font-family: "Istok Web";
   font-size: 64px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,32 +239,31 @@
 .reconhecimento {
   display: flex;
   justify-content: center;
-  margin-top: 50px; /* aumenta o espaço para 50px */
+  margin-top: 50px;
 }
 
 .reconhecimento button {
   display: flex;
   align-items: center;
-  gap: 15px; /* espaço entre img e texto */
+  gap: 15px;
   color: #000;
-  font-family: "Istok Web";
   font-size: 24px;
   font-weight: 400;
-  line-height: normal;
   width: 386px;
   height: 97px;
   border-radius: 10px;
   background: #38CF56;
   border: none;
   cursor: pointer;
-  padding: 0 20px; /* espaçamento interno lateral para ficar bonitão */
+  padding: 0 20px;
+  transition: background-color 0.2s;
 }
 
+.reconhecimento button:hover {
+  background-color: #2fb149;
+}
 
-
-/* Card já estilizado inline no JSX */
-
-/* Font Awesome icons override */
+/* Font Awesome icons */
 .fas, .far, .fab, .fa {
-  color: #22ad3e !important;
+  color: #38CF56 !important;
 }

@@ -12,7 +12,7 @@ export default function Cadastro() {
 
         <div className={styles.Title}>
           <h2>Faça seu cadastro</h2>
-          <p>Insira as informações necessárias para seu cadastro</p>
+          <p>Insira as informações necessárias para seu cadastro.</p>
         </div>
 
         <div className={styles.Inputs}>
