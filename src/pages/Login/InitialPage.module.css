@@ -252,3 +252,48 @@
 .fas, .far, .fab, .fa {
   color: #22ad3e !important;
 }
+
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalBox {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 40px 50px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  font-family: "Istok Web", sans-serif;
+  text-align: center;
+}
+
+.modalTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 36px;
+  line-height: normal;
+}
+
+
+.btnConfirm {  /* botão Sim */
+  background-color: #5bb360; /* verde escuro */
+  /* resto do estilo igual */
+}
+
+/* botão Não */
+.btnCancel {
+  background-color: rgba(59, 117, 62, 0.5); /* mesma cor, 50% opacity */
+  /* resto do estilo igual ao btnConfirm */
+}

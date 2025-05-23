@@ -5,6 +5,7 @@ import styles from './InitialPage.module.css';
 export default function InitialPage() {
   const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // Atualiza o relógio a cada segundo
   useEffect(() => {
@@ -46,6 +47,22 @@ export default function InitialPage() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  };
+
+  // Abre modal de confirmação
+  const handleLogoutClick = () => {
+    setShowConfirm(true);
+  };
+
+  // Confirmar saída: navegar para /logout
+  const confirmLogout = () => {
+    setShowConfirm(false);
+    navigate('/logout');
+  };
+
+  // Cancelar saída: fechar modal
+  const cancelLogout = () => {
+    setShowConfirm(false);
   };
 
   return (
@@ -94,7 +111,7 @@ export default function InitialPage() {
             </div>
             <div
               className={styles.profileMenuItem}
-              onClick={() => navigate('/')}
+              onClick={handleLogoutClick}  // <<< Aqui abre modal
               style={{ cursor: 'pointer' }}
             >
               <i className="fas fa-sign-out-alt"></i> Sair
@@ -170,6 +187,23 @@ export default function InitialPage() {
           </div>
         </div>
       </div>
+
+      {/* Modal de confirmação de saída */}
+      {showConfirm && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalBox}>
+            <h2 className={styles.modalTitle}>Tem certeza que deseja sair?</h2>
+            <div className={styles.modalActions}>
+              <button className={styles.btnCancel} onClick={cancelLogout} aria-label="Cancelar saída">
+                Não
+              </button>
+              <button className={styles.btnConfirm} onClick={confirmLogout} aria-label="Confirmar saída">
+                Sim
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

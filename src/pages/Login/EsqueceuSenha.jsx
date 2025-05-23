@@ -7,7 +7,6 @@ export default function EsqueceuSenha() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [sending, setSending] = useState(false);
-  const [success, setSuccess] = useState('');
 
   // Validação básica de email
   function isValidEmail(email) {
@@ -15,14 +14,12 @@ export default function EsqueceuSenha() {
   }
 
   const handleCancelar = () => {
-    navigate('/'); // volta pra tela de login
+    navigate('/');
   };
 
   const handleEnviar = (e) => {
-    e.preventDefault(); // previne envio padrão do form
-
+    e.preventDefault();
     setError('');
-    setSuccess('');
 
     if (!isValidEmail(email)) {
       setError('Por favor, insira um email válido.');
@@ -31,11 +28,10 @@ export default function EsqueceuSenha() {
 
     setSending(true);
 
-    // Simula uma requisição de backend
+    // Simula envio e redireciona após 2 segundos
     setTimeout(() => {
       setSending(false);
-      setSuccess('Código de recuperação enviado para seu email!');
-      // Aqui pode redirecionar, limpar form, ou o que quiser depois do sucesso
+      navigate('/codigo-recuperacao');  // Certifique-se que esta rota está declarada no App.jsx
     }, 2000);
   };
 
@@ -47,10 +43,7 @@ export default function EsqueceuSenha() {
           <h2>CheckPoint</h2>
         </div>
 
-        <p className={styles.instruction}>
-          Recupere seu acesso
-        </p>
-
+        <p className={styles.instruction}>Recupere seu acesso</p>
         <p className={styles.inst2}>
           Insira seu email ou matrícula para receber o código de recuperação por email
         </p>
@@ -68,13 +61,21 @@ export default function EsqueceuSenha() {
         </div>
 
         {error && <p style={{ color: 'red', marginTop: '8px' }}>{error}</p>}
-        {success && <p style={{ color: 'green', marginTop: '8px' }}>{success}</p>}
 
         <div className={styles.buttonGroup}>
-          <button type="button" className={styles.buttonCancelar} onClick={handleCancelar} disabled={sending}>
+          <button
+            type="button"
+            className={styles.buttonCancelar}
+            onClick={handleCancelar}
+            disabled={sending}
+          >
             Cancelar
           </button>
-          <button type="submit" className={styles.buttonEnviar} disabled={sending}>
+          <button
+            type="submit"
+            className={styles.buttonEnviar}
+            disabled={sending}
+          >
             {sending ? 'Enviando...' : 'Enviar'}
           </button>
         </div>
