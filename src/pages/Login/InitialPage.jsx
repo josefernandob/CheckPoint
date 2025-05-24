@@ -5,13 +5,14 @@ import styles from './InitialPage.module.css';
 export default function InitialPage() {
   const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // Atualiza o relógio a cada segundo
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -22,7 +23,7 @@ export default function InitialPage() {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
-      timeZone: 'America/Sao_Paulo'
+      timeZone: 'America/Sao_Paulo',
     });
   };
 
@@ -33,19 +34,38 @@ export default function InitialPage() {
       now.getFullYear(),
       now.getMonth(),
       now.getDate(),
-      17, 0, 0 // 17:00:00
+      17,
+      0,
+      0
     );
-    
-    // Se já passou das 17:00, mostra 00:00
+
     if (now > target) {
       return '00:00';
     }
-    
+
     const diff = target - now;
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+
+    return `${hours.toString().padStart(2, '0')}:${minutes
+      .toString()
+      .padStart(2, '0')}`;
+  };
+
+  // Abrir modal de confirmação
+  const handleLogoutClick = () => {
+    setShowConfirm(true);
+  };
+
+  // Confirmar logout
+  const confirmLogout = () => {
+    setShowConfirm(false);
+    navigate('/logout');
+  };
+
+  // Cancelar logout
+  const cancelLogout = () => {
+    setShowConfirm(false);
   };
 
   return (
@@ -53,7 +73,11 @@ export default function InitialPage() {
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.headerLeft}>
-          <img src="/src/assets/Nearpod.svg" className={styles.logo} alt="Logo" />
+          <img
+            src="/src/assets/Nearpod.svg"
+            className={styles.logo}
+            alt="Logo"
+          />
           <span className={styles.logoText}>CheckPoint</span>
         </div>
         <div className={styles.userInfo}>
@@ -69,29 +93,68 @@ export default function InitialPage() {
         {/* Sidebar */}
         <div className={styles.sidebar}>
           <div className={styles.topMenu}>
-            <div className={styles.menuItem} onClick={() => navigate('/registrar')}>
+            <div
+              className={styles.menuItem}
+              onClick={() => navigate('/registrar')}
+            >
               <i className="fas fa-calendar-alt"></i> Registrar Ponto
             </div>
-            <div className={styles.menuItem}>
+            <div
+              className={styles.menuItem}
+              onClick={() => navigate('/banco-horas')}
+            >
               <i className="fas fa-stopwatch"></i> Banco de Horas
             </div>
-            <div className={styles.menuItem}>
+            <div
+              className={styles.menuItem}
+              onClick={() => navigate('/relatorio')}
+            >
               <i className="fas fa-file-alt"></i> Relatório
             </div>
-            <div className={styles.menuItem}>
-              <i className=" fas fa-calculator"></i> Corrigir Ponto
+            <div
+              className={styles.menuItem}
+              onClick={() => navigate('/corrigir-ponto')}
+            >
+              <i className="fas fa-calculator"></i> Corrigir Ponto
             </div>
             <div className={styles.menuSpacer}></div>
           </div>
 
           <div className={styles.profileSection}>
-            <div className={styles.profileHeader}>
+            <div
+              className={styles.profileHeader}
+              onClick={() => navigate('/perfil')}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') navigate('/perfil');
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <i className="fas fa-user"></i> Perfil
             </div>
-            <div className={styles.profileMenuItem}>
+            <div
+              className={styles.profileMenuItem}
+              onClick={() => navigate('/configuracoes')}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') navigate('/configuracoes');
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <i className="fas fa-cog"></i> Configurações
             </div>
-            <div className={styles.profileMenuItem} onClick={() => navigate('/')}>
+            <div
+              className={styles.profileMenuItem}
+              onClick={handleLogoutClick}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') handleLogoutClick();
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <i className="fas fa-sign-out-alt"></i> Sair
             </div>
           </div>
@@ -136,14 +199,16 @@ export default function InitialPage() {
             <div className={styles.hoursGrid}>
               <div className={styles.hoursItem}>
                 <div className={styles.detailText}>
-                  <i className={`fas fa-briefcase ${styles.detailIcon}`}></i> Trabalhando
+                  <i className={`fas fa-briefcase ${styles.detailIcon}`}></i>{' '}
+                  Trabalhando
                 </div>
                 <div className={styles.hoursValue}>05:00</div>
               </div>
 
               <div className={styles.hoursItem}>
                 <div className={styles.detailText}>
-                  <i className={`fas fa-plus-circle ${styles.detailIcon}`}></i> Horas extras
+                  <i className={`fas fa-plus-circle ${styles.detailIcon}`}></i>{' '}
+                  Horas extras
                 </div>
                 <div className={styles.hoursValue}>00:00</div>
               </div>
@@ -165,6 +230,31 @@ export default function InitialPage() {
           </div>
         </div>
       </div>
+
+      {/* Modal de confirmação de logout */}
+      {showConfirm && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalBox}>
+            <h2 className={styles.modalTitle}>Tem certeza que deseja sair?</h2>
+            <div className={styles.modalActions}>
+              <button
+                className={styles.btnCancel}
+                onClick={cancelLogout}
+                aria-label="Cancelar saída"
+              >
+                Não
+              </button>
+              <button
+                className={styles.btnConfirm}
+                onClick={confirmLogout}
+                aria-label="Confirmar saída"
+              >
+                Sim
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
