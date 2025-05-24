@@ -9,11 +9,14 @@ import CodRec from './pages/Login/CodRec';
 import RedSen from './pages/Login/RedSen';
 import Logout from './pages/Login/Logout';
 
-// Novos imports:
 import Bh from './pages/Login/Bh';
 import Relat from './pages/Login/Relat';
 import CorrP from './pages/Login/CorrP';
 import Profile from './pages/Login/Profile';
+import Settings from './pages/Login/Settings';
+
+// Novos imports:
+
 
 function App() {
   return (
@@ -29,11 +32,12 @@ function App() {
           <Route path="/redsen" element={<RedSen />} />
           <Route path="/logout" element={<Logout />} />
 
-          {/* Novas rotas adicionadas */}
-          <Route path="/banco-horas" element={<Bh />} />
-          <Route path="/relatorio" element={<Relat />} />
-          <Route path="/corrigir-ponto" element={<CorrP />} />
-          <Route path="/perfil" element={<Profile />} />
+      <Route path="/banco-horas" element={<Bh />} />
+     <Route path="/relatorio" element={<Relat />} />
+      <Route path="/corrigir-ponto" element={<CorrP />} />
+      <Route path="/perfil" element={<Profile />} />
+      <Route path="/configuracoes" element={<Settings />} />
+          
         </Routes>
       </Router>
     </div>
