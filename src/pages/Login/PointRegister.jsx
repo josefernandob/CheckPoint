@@ -11,7 +11,7 @@ export default function PointRegister() {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -20,7 +20,7 @@ export default function PointRegister() {
     const hours = date.getHours().toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
     const seconds = date.getSeconds().toString().padStart(2, '0');
-    
+
     return (
       <>
         {hours}
@@ -77,7 +77,7 @@ export default function PointRegister() {
             <div className={styles.menuItem}>
               <i className="fas fa-file-alt"></i> Relatório
             </div>
-             <div className={styles.menuItem}>
+            <div className={styles.menuItem}>
               <i className=" fas fa-calculator"></i> Corrigir Ponto
             </div>
             <div className={styles.menuSpacer}></div>
@@ -126,7 +126,8 @@ export default function PointRegister() {
           </div>
 
           <div className={styles.reconhecimento}>
-            <button>
+
+            <button onClick={() => navigate('/facial')}>
               <img
                 src="/src/assets/FacialRecognition.svg"
                 alt="Ícone reconhecimento facial"
