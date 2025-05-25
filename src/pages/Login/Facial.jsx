@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Facial.module.css'; // Corrigido o nome do arquivo CSS Module
+import styles from './Facial.module.css';
 
 export default function Facial() {
   const navigate = useNavigate();
+  const [isRecognizing, setIsRecognizing] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const handleRegister = () => {
+    setIsRecognizing(true);
+    
+    // Simula o processo de reconhecimento
+    setTimeout(() => {
+      setShowConfirmation(true);
+      setIsRecognizing(false);
+      
+      // Redireciona após 2 segundos
+      setTimeout(() => {
+        navigate('/registrar');
+      }, 2000);
+    }, 1500);
+  };
 
   return (
     <div className={styles.appContainer}>
-      {/* Header */}
+      {/* Header (mantido igual) */}
       <div className={styles.header}>
         <div className={styles.headerLeft}>
           <img
@@ -25,9 +42,9 @@ export default function Facial() {
         </div>
       </div>
 
-      {/* Main Container */}
+      {/* Main Container (mantido igual) */}
       <div className={styles.container}>
-        {/* Sidebar */}
+        {/* Sidebar (mantido igual) */}
         <div className={styles.sidebar}>
           <div className={styles.topMenu}>
             <div
@@ -94,15 +111,51 @@ export default function Facial() {
           </div>
         </div>
 
-        {/* Main Content vazio */}
+        {/* Main Content */}
         <div className={styles.mainContent}>
-
-       <div className={styles.reg}>
-        <button onClick={() => navigate('/RegisDone')}>
-
-                     REGISTRAR
-                   </button>
+          <div className={styles.facialRecognition}>
+            <h2>RECONHECIMENTO FACIAL</h2>
+            
+            {/* Área da câmera com confirmação */}
+            <div className={styles.cameraPreview}>
+              <div className={styles.cameraPlaceholder}>
+                {showConfirmation ? (
+                  <div className={styles.confirmationSymbol}>✓</div>
+                ) : (
+                  <i className="fas fa-camera"></i>
+                )}
               </div>
+            </div>
+            
+            {/* Dicas (mantido igual) */}
+            <div className={styles.tips}>
+              <h3>DICAS</h3>
+              <ul>
+                <li>Bem iluminado: Evite sombras ou luzes fortes atrás de você</li>
+                <li>Rosto visível: Não use óculos escuros ou máscara</li>
+                <li>Fique parado: Centralize o rosto e não se mova até o registro ser feito</li>
+              </ul>
+            </div>
+            
+            {/* Botão com estados controlados */}
+            <button 
+              className={`${styles.registerButton} ${
+                showConfirmation ? styles.confirmedButton : ''
+              }`}
+              onClick={handleRegister}
+              disabled={isRecognizing || showConfirmation}
+            >
+              {isRecognizing ? (
+                <>
+                  <i className="fas fa-spinner fa-spin"></i> Reconhecendo...
+                </>
+              ) : showConfirmation ? (
+                "Registro Confirmado!"
+              ) : (
+                "REGISTRAR"
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </div>
