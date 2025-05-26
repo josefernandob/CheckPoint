@@ -5,22 +5,20 @@ import styles from './PointRegister.module.css';
 export default function PointRegister() {
   const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [userId, setUserId] = useState(["", "", "", ""]);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  // Atualiza o relógio a cada segundo
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
-  // Formata a hora com os dois pontos piscando
   const formatTime = (date) => {
     const hours = date.getHours().toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
     const seconds = date.getSeconds().toString().padStart(2, '0');
-
     return (
       <>
         {hours}
@@ -32,7 +30,6 @@ export default function PointRegister() {
     );
   };
 
-  // Formata a data em português
   const formatDate = (date) => {
     return date.toLocaleDateString('pt-BR', {
       weekday: 'long',
@@ -43,9 +40,25 @@ export default function PointRegister() {
     });
   };
 
+  const handleChange = (index, value) => {
+    const onlyDigits = value.replace(/\D/, '');
+
+    if (value && !/^\d$/.test(value)) {
+      setErrorMessage('Digite apenas números.');
+      return;
+    }
+
+    setErrorMessage('');
+    const newId = [...userId];
+    newId[index] = onlyDigits;
+    setUserId(newId);
+
+    const nextInput = document.getElementById(`digit-${index + 1}`);
+    if (onlyDigits && nextInput) nextInput.focus();
+  };
+
   return (
     <div className={styles.appContainer}>
-      {/* Header */}
       <div className={styles.header}>
         <div className={styles.headerLeft}>
           <img src="/src/assets/Nearpod.svg" className={styles.logo} alt="Logo" />
@@ -59,48 +72,53 @@ export default function PointRegister() {
         </div>
       </div>
 
-      {/* Main Container */}
       <div className={styles.container}>
-        {/* Sidebar */}
         <div className={styles.sidebar}>
           <div className={styles.topMenu}>
-            <div
-              className={styles.menuItem}
-              onClick={() => navigate('/registrar')}
-              style={{ cursor: 'pointer' }}
-            >
+            <div className={styles.menuItem} onClick={() => navigate('/registrar')}>
               <i className="fas fa-calendar-alt"></i> Registrar Ponto
             </div>
-            <div className={styles.menuItem}>
+            <div className={styles.menuItem} onClick={() => navigate('/banco-horas')}>
               <i className="fas fa-stopwatch"></i> Banco de Horas
             </div>
-            <div className={styles.menuItem}>
+            <div className={styles.menuItem} onClick={() => navigate('/relatorio')}>
               <i className="fas fa-file-alt"></i> Relatório
             </div>
-            <div className={styles.menuItem}>
+            <div className={styles.menuItem} onClick={() => navigate('/corrigir-ponto')}>
               <i className=" fas fa-calculator"></i> Corrigir Ponto
             </div>
             <div className={styles.menuSpacer}></div>
           </div>
 
           <div className={styles.profileSection}>
-            <div className={styles.profileHeader}>
+            <div
+              className={styles.profileHeader}
+              onClick={() => navigate('/perfil')}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') navigate('/perfil');
+              }}
+            >
               <i className="fas fa-user"></i> Perfil
-            </div>
-            <div className={styles.profileMenuItem}>
-              <i className="fas fa-cog"></i> Configurações
             </div>
             <div
               className={styles.profileMenuItem}
-              onClick={() => navigate('/')}
-              style={{ cursor: 'pointer' }}
+              onClick={() => navigate('/configuracoes')}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') navigate('/configuracoes');
+              }}
             >
+              <i className="fas fa-cog"></i> Configurações
+            </div>
+            <div className={styles.profileMenuItem} onClick={() => navigate('/')}>
               <i className="fas fa-sign-out-alt"></i> Sair
             </div>
           </div>
         </div>
 
-        {/* Main Content */}
         <div className={styles.mainContent}>
           <div className={styles.Box}>
             <div className={styles.Ppoint}>
@@ -119,14 +137,25 @@ export default function PointRegister() {
           <div className={styles.txt}>Digite seu ID</div>
 
           <div className={styles.numberGrid}>
-            <div className={styles.number}>3</div>
-            <div className={styles.number}>2</div>
-            <div className={styles.number}>1</div>
-            <div className={styles.number}>8</div>
+            {userId.map((digit, index) => (
+              <input
+                key={index}
+                id={`digit-${index}`}
+                type="text"
+                inputMode="numeric"
+                maxLength="1"
+                className={styles.digitInput}
+                value={digit}
+                onChange={(e) => handleChange(index, e.target.value)}
+              />
+            ))}
           </div>
 
-          <div className={styles.reconhecimento}>
+          {errorMessage && (
+            <div className={styles.errorMessage}>{errorMessage}</div>
+          )}
 
+          <div className={styles.reconhecimento}>
             <button onClick={() => navigate('/facial')}>
               <img
                 src="/src/assets/FacialRecognition.svg"

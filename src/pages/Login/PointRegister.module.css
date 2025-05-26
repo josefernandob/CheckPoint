@@ -139,6 +139,10 @@
   margin-right: 15px;
 }
 
+.profileHeader:hover {
+  background-color: rgba(56, 207, 86, 0.4);
+}
+
 .profileMenuItem {
   padding: 16px 25px;
   cursor: pointer;
@@ -293,4 +297,31 @@
 /* Font Awesome icons */
 .fas, .far, .fab, .fa {
   color: #38CF56 !important;
+}
+
+
+.digitInput {
+  width: 70px;
+  height: 65px;
+  border-radius: 10px;
+  border: 5px solid #38CF56;
+  background: transparent;
+  color: #000;
+  font-size: 64px;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+}
+
+.digitInput:focus {
+  border-color: #2fb149;
+  box-shadow: 0 0 0 3px rgba(56, 207, 86, 0.2);
+}
+
+.errorMessage {
+  color: red;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 15px;
+  text-align: center;
 }

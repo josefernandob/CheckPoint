@@ -362,3 +362,43 @@
     font-size: 16px;
   }
 }
+
+.webcam {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.capturedImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.captureButton,
+.retakeButton,
+.sendButton {
+  background-color: #38CF56;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  
+}
+
+.captureButton:hover,
+.retakeButton:hover,
+.sendButton:hover {
+  background-color: #2eaa46;
+}

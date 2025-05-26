@@ -41,7 +41,6 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  
 }
 
 .User,
@@ -112,7 +111,7 @@
   font-size: 0.85rem;
   color: var(--allblack);
   margin-left: 5px;
-    margin-top: -50px;
+  margin-top: -50px;
 }
 
 .checkboxArea input {
