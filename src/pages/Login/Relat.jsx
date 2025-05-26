@@ -172,10 +172,24 @@ export default function Relat() {
                 ))}
               </tbody>
             </table>
+
+
           </div>
 
+                  
+          
         </div>
       </div>
+
+        
     </div>
+
+           
+
+
+
+
   );
 }
+
+
