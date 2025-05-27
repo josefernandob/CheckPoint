@@ -160,6 +160,44 @@
   height: calc(100vh - 75px);
 }
 
+/* Container do título com detalhe verde */
+.tituloContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+}
+
+.tituloLinha {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.detalheVerde {
+  flex: 1;
+  height: 3px;
+  background-color: #38CF56;
+}
+
+.tableTitle {
+  font-size: 24px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.selectMes {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #38CF56;
+  border-radius: 6px;
+  color: #38CF56;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .reportHeader {
   display: flex;
   justify-content: space-between;
@@ -196,7 +234,7 @@
   overflow-x: auto;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .reportTable {
@@ -264,7 +302,7 @@
   border-radius: 8px;
   max-width: 400px;
   width: 90%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .modalTitle {
@@ -296,4 +334,10 @@
 .btnConfirm {
   background-color: #38cf56;
   color: white;
+}
+
+.activeMenu {
+  background: #e0e0e0;
+  color: #222;
+  font-weight: bold;
 }

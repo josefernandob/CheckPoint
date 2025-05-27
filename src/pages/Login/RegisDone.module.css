@@ -154,3 +154,9 @@ flex-shrink: 0;
 
 
 }
+
+.activeMenu {
+  background: #e0e0e0;
+  color: #222;
+  font-weight: bold;
+}

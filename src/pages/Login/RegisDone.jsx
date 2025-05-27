@@ -1,9 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './RegisDone.module.css'; // Corrigido o nome do arquivo CSS Module
 
 export default function RegisDone() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className={styles.appContainer}>
@@ -30,28 +31,18 @@ export default function RegisDone() {
         {/* Sidebar */}
         <div className={styles.sidebar}>
           <div className={styles.topMenu}>
-            <div
-              className={styles.menuItem}
-              onClick={() => navigate('/registrar')}
-            >
+            
+
+            <div className={`${styles.menuItem} ${location.pathname === '/registrar' ? styles.activeMenu : ''}`} onClick={() => navigate('/registrar')}>
               <i className="fas fa-calendar-alt"></i> Registrar Ponto
             </div>
-            <div
-              className={styles.menuItem}
-              onClick={() => navigate('/banco-horas')}
-            >
+            <div className={`${styles.menuItem} ${location.pathname === '/banco-horas' ? styles.activeMenu : ''}`} onClick={() => navigate('/banco-horas')}>
               <i className="fas fa-stopwatch"></i> Banco de Horas
             </div>
-            <div
-              className={styles.menuItem}
-              onClick={() => navigate('/relatorio')}
-            >
+            <div className={`${styles.menuItem} ${location.pathname === '/relatorio' ? styles.activeMenu : ''}`} onClick={() => navigate('/relatorio')}>
               <i className="fas fa-file-alt"></i> Relatório
             </div>
-            <div
-              className={styles.menuItem}
-              onClick={() => navigate('/corrigir-ponto')}
-            >
+            <div className={`${styles.menuItem} ${location.pathname === '/corrigir-ponto' ? styles.activeMenu : ''}`} onClick={() => navigate('/corrigir-ponto')}>
               <i className="fas fa-calculator"></i> Corrigir Ponto
             </div>
             <div className={styles.menuSpacer}></div>
@@ -94,15 +85,15 @@ export default function RegisDone() {
           </div>
         </div>
 
-        
+
         <div className={styles.mainContent}>
-         
-         <div className={styles.voltar}>
-                 <button onClick={() => navigate('/RegisFail')}>
-         
-                              VOLTAR
-                            </button>
-                       </div>
+
+          <div className={styles.voltar}>
+            <button onClick={() => navigate('/RegisFail')}>
+
+              VOLTAR
+            </button>
+          </div>
 
         </div>
       </div>

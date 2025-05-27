@@ -5,16 +5,13 @@ import styles from './Relat.module.css';
 export default function Relat() {
   const navigate = useNavigate();
 
-  // Lista dos meses que quer mostrar no select
-  const months = [
-    { value: '2025-04', label: 'Abril 2025' },
-    { value: '2025-05', label: 'Maio 2025' },
+  const meses = [
+    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
   ];
 
-  // Estado do mês selecionado começa em abril (index 0)
-  const [selectedMonth, setSelectedMonth] = useState('2025-04');
+  const [mesSelecionado, setMesSelecionado] = useState('04');
 
-  // Dados da tabela — só uma lista para ambos os meses
   const dadosTabela = [
     ["01/04/2025", "07:00:02", "12:00:01", "13:05:01", "17:01:02", "00:00:00"],
     ["02/04/2025", "07:02:00", "12:10:01", "13:00:00", "17:02:08", "00:00:00"],
@@ -48,22 +45,13 @@ export default function Relat() {
     ["30/04/2025", "07:00:00", "12:00:00", "13:00:00", "17:00:15", "00:00:00"],
   ];
 
-  // Função para substituir o mês na string de data, para exibir "abril" ou "maio"
-  // Exemplo: "01/04/2025" para "01/05/2025" quando maio selecionado
   const formatarDataParaMesSelecionado = (dataStr, mesSelecionado) => {
-    // Data no formato "dd/mm/yyyy"
     let [dia, mes, ano] = dataStr.split('/');
-    if (mesSelecionado === '2025-05') {
-      mes = '05';
-    } else {
-      mes = '04';
-    }
-    return `${dia}/${mes}/${ano}`;
+    return `${dia}/${mesSelecionado}/${ano}`;
   };
 
   return (
     <div className={styles.appContainer}>
-      {/* Header */}
       <div className={styles.header}>
         <div className={styles.headerLeft}>
           <img src="/src/assets/Nearpod.svg" className={styles.logo} alt="Logo" />
@@ -76,27 +64,23 @@ export default function Relat() {
           </div>
         </div>
       </div>
-
-      {/* Container */}
       <div className={styles.container}>
-        {/* Sidebar */}
         <div className={styles.sidebar}>
           <div className={styles.topMenu}>
-            <div className={styles.menuItem} onClick={() => navigate('/registrar')}>
+            <div className={`${styles.menuItem} ${location.pathname === '/registrar' ? styles.activeMenu : ''}`} onClick={() => navigate('/registrar')}>
               <i className="fas fa-calendar-alt"></i> Registrar Ponto
             </div>
-            <div className={styles.menuItem} onClick={() => navigate('/banco-horas')}>
+            <div className={`${styles.menuItem} ${location.pathname === '/banco-horas' ? styles.activeMenu : ''}`} onClick={() => navigate('/banco-horas')}>
               <i className="fas fa-stopwatch"></i> Banco de Horas
             </div>
-            <div className={styles.menuItem} onClick={() => navigate('/relatorio')}>
+            <div className={`${styles.menuItem} ${location.pathname === '/relatorio' ? styles.activeMenu : ''}`} onClick={() => navigate('/relatorio')}>
               <i className="fas fa-file-alt"></i> Relatório
             </div>
-            <div className={styles.menuItem} onClick={() => navigate('/corrigir-ponto')}>
+            <div className={`${styles.menuItem} ${location.pathname === '/corrigir-ponto' ? styles.activeMenu : ''}`} onClick={() => navigate('/corrigir-ponto')}>
               <i className="fas fa-calculator"></i> Corrigir Ponto
             </div>
             <div className={styles.menuSpacer}></div>
           </div>
-
           <div className={styles.profileSection}>
             <div
               className={styles.profileHeader}
@@ -127,26 +111,22 @@ export default function Relat() {
             </div>
           </div>
         </div>
-
-        {/* Main Content */}
         <div className={styles.mainContent}>
-          <div className={styles.reportHeader}>
-            <h2 className={styles.reportTitle}>RELATÓRIO</h2>
-            <div className={styles.monthSelector}>
-              <label htmlFor="monthSelect">Mês:</label>
+          <div className={styles.tituloContainer}>
+            <div className={styles.tituloLinha}>
+              <h2 className={styles.tableTitle}>Relatório</h2>
+              <div className={styles.detalheVerde}></div>
               <select
-                id="monthSelect"
-                value={selectedMonth}
-                onChange={(e) => setSelectedMonth(e.target.value)}
-                className={styles.selectMonth}
+                className={styles.selectMes}
+                value={mesSelecionado}
+                onChange={(e) => setMesSelecionado(e.target.value)}
               >
-                {months.map(({ value, label }) => (
-                  <option key={value} value={value}>{label}</option>
+                {meses.map((mes, idx) => (
+                  <option key={idx} value={String(idx + 1).padStart(2, '0')}>{mes}</option>
                 ))}
               </select>
             </div>
           </div>
-
           <div className={styles.tableContainer}>
             <table className={styles.reportTable}>
               <thead>
@@ -162,7 +142,7 @@ export default function Relat() {
               <tbody>
                 {dadosTabela.map(([data, entrada, saidaI, entradaI, saida, extra], idx) => (
                   <tr key={idx}>
-                    <td>{formatarDataParaMesSelecionado(data, selectedMonth)}</td>
+                    <td>{formatarDataParaMesSelecionado(data, mesSelecionado)}</td>
                     {[entrada, saidaI, entradaI, saida, extra].map((hora, i) => (
                       <td key={i} className={hora === "00:00:00" ? styles.zeroTime : ""}>
                         {hora}
@@ -172,24 +152,9 @@ export default function Relat() {
                 ))}
               </tbody>
             </table>
-
-
           </div>
-
-                  
-          
         </div>
       </div>
-
-        
     </div>
-
-           
-
-
-
-
   );
 }
-
-
