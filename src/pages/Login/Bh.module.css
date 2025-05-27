@@ -1,9 +1,9 @@
 .appContainer {
   font-size: 18px;
   font-family: "Istok Web", sans-serif;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -59,10 +59,10 @@
 /* Main Container */
 .container {
   display: flex;
-  min-height: calc(100vh - 75px);
+  flex: 1;
+  overflow: hidden;
 }
 
-/* Sidebar Styles */
 .sidebar {
   width: 280px;
   display: flex;
@@ -70,7 +70,6 @@
   background-color: white;
   border-right: 1px solid #e0e0e0;
   overflow-y: auto;
-  flex-shrink: 0;
 }
 
 .topMenu {
@@ -93,13 +92,6 @@
 
 .menuItem:hover {
   background-color: rgba(56, 207, 86, 0.2);
-}
-
-.menuItem i {
-  font-size: 28px;
-  width: 32px;
-  margin-right: 15px;
-  color: #38CF56;
 }
 
 .menuItem i {
@@ -154,24 +146,16 @@
   margin-right: 15px;
 }
 
-/* Main Content Placeholder */
 .mainContent {
   flex: 1;
   padding: 25px;
   background-color: #f8f9fa;
-}
-
-.mainContent {
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  min-height: 100%;
-  padding-bottom: 32px;
 }
 
-/* Container do título com detalhe verde */
 .tituloContainer {
   width: 100%;
   max-width: 1200px;
@@ -191,9 +175,13 @@
   background-color: #38CF56;
 }
 
-.tableTitle {
-  font-size: 24px;
-  font-weight: 600;
+.bhTitle {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 0;
+  font-weight: bold; /* Alterado de normal para bold */
+  font-family: "Istok Web", sans-serif;
+  letter-spacing: 1px;
   white-space: nowrap;
 }
 
@@ -209,7 +197,6 @@
   white-space: nowrap;
 }
 
-
 .bhContainer {
   background-color: white;
   border-radius: 10px;
@@ -220,13 +207,8 @@
   text-align: center;
 }
 
-.bhTitle {
-  color: #38CF56;
-  font-size: 20px;
-  margin-bottom: 25px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.timeCardsContainer {
+  margin-bottom: 20px;
 }
 
 .timeCard {
@@ -251,30 +233,21 @@
   letter-spacing: 0.5px;
 }
 
-.dateDivider {
-  margin: 20px 0;
-  color: #38CF56;
-  font-weight: bold;
+.downloadButton {
+  background-color: #38CF56;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
   font-size: 16px;
-  position: relative;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
 }
 
-.dateDivider span {
-  background: white;
-  padding: 0 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.dateDivider:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: #e0e0e0;
-  z-index: 0;
+.downloadButton:hover {
+  background-color: #2db149;
 }
 
 .activeMenu {

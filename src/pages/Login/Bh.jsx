@@ -4,7 +4,6 @@ import styles from './Bh.module.css';
 
 export default function Bh() {
   const navigate = useNavigate();
-
   const [dataSelecionada, setDataSelecionada] = useState('2025-04-22');
 
   return (
@@ -82,59 +81,51 @@ export default function Bh() {
         </div>
 
         <div className={styles.mainContent}>
+          <div className={styles.tituloContainer}>
+            <div className={styles.tituloLinha}>
+              <h2 className={styles.bhTitle}>Banco de Horas</h2>
+              <div className={styles.detalheVerde}></div>
+              <input
+                type="date"
+                className={styles.selectMes}
+                value={dataSelecionada}
+                onChange={e => setDataSelecionada(e.target.value)}
+                style={{ minWidth: 150 }}
+              />
+            </div>
+          </div>
 
-          <div className={styles.mainContent}>
-            <div className={styles.tituloContainer}>
-              <div className={styles.tituloLinha}>
-                <h2 className={styles.bhTitle}>Banco de Horas</h2>
-                <div className={styles.detalheVerde}></div>
-                <input
-                  type="date"
-                  className={styles.selectMes}
-                  value={dataSelecionada}
-                  onChange={e => setDataSelecionada(e.target.value)}
-                  style={{ minWidth: 150 }}
-                />
+          <div className={styles.bhContainer}>
+            <div className={styles.timeCardsContainer}>
+              <div className={`${styles.timeCard} ${styles.entryCard}`}>
+                <div className={styles.timeValue}>07:35:05</div>
+                <div className={styles.timeLabel}>ENTRADA REGISTRADA</div>
+              </div>
+
+              <div className={`${styles.timeCard} ${styles.breakOutCard}`}>
+                <div className={styles.timeValue}>12:00:06</div>
+                <div className={styles.timeLabel}>INTERVALO SAÍDA</div>
+              </div>
+
+              <div className={`${styles.timeCard} ${styles.breakInCard}`}>
+                <div className={styles.timeValue}>13:05:00</div>
+                <div className={styles.timeLabel}>INTERVALO ENTRADA</div>
+              </div>
+
+              <div className={`${styles.timeCard} ${styles.exitCard}`}>
+                <div className={styles.timeValue}>17:00:01</div>
+                <div className={styles.timeLabel}>SAÍDA REGISTRADA</div>
+              </div>
+
+              <div className={`${styles.timeCard} ${styles.overtimeCard}`}>
+                <div className={styles.timeValue}>00:00:00</div>
+                <div className={styles.timeLabel}>HORA EXTRA</div>
               </div>
             </div>
 
-            <div className={styles.mainContent}>
-              <div className={styles.bhContainer}>
-                <div className={styles.bhHeader}>
-                </div>
-
-                <div className={styles.timeCardsContainer}>
-                  <div className={`${styles.timeCard} ${styles.entryCard}`}>
-                    <div className={styles.timeValue}>07:35:05</div>
-                    <div className={styles.timeLabel}>ENTRADA REGISTRADA</div>
-                  </div>
-
-                  <div className={`${styles.timeCard} ${styles.breakOutCard}`}>
-                    <div className={styles.timeValue}>12:00:06</div>
-                    <div className={styles.timeLabel}>INTERVALO SAÍDA</div>
-                  </div>
-
-                  <div className={`${styles.timeCard} ${styles.breakInCard}`}>
-                    <div className={styles.timeValue}>13:05:00</div>
-                    <div className={styles.timeLabel}>INTERVALO ENTRADA</div>
-                  </div>
-
-                  <div className={`${styles.timeCard} ${styles.exitCard}`}>
-                    <div className={styles.timeValue}>17:00:01</div>
-                    <div className={styles.timeLabel}>SAÍDA REGISTRADA</div>
-                  </div>
-
-                  <div className={`${styles.timeCard} ${styles.overtimeCard}`}>
-                    <div className={styles.timeValue}>00:00:00</div>
-                    <div className={styles.timeLabel}>HORA EXTRA</div>
-                  </div>
-                </div>
-
-                <button className={styles.downloadButton}>
-                  BAIXAR EXTRATO
-                </button>
-              </div>
-            </div>
+            <button className={styles.downloadButton}>
+              BAIXAR EXTRATO
+            </button>
           </div>
         </div>
       </div>

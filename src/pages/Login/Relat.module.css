@@ -112,9 +112,8 @@
 
 .profileHeader {
   padding: 18px 25px;
-  font-weight: normal;
-  font-size: 20px;
-  font-family: "Istok Web", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(56, 207, 86, 0.5);
@@ -139,7 +138,6 @@
   align-items: center;
   font-size: 18px;
   transition: background-color 0.2s;
-  font-family: "Istok Web", sans-serif;
 }
 
 .profileMenuItem:hover {
@@ -160,7 +158,6 @@
   height: calc(100vh - 75px);
 }
 
-/* Container do título com detalhe verde */
 .tituloContainer {
   width: 100%;
   max-width: 1200px;
