@@ -325,3 +325,9 @@
   margin-top: 15px;
   text-align: center;
 }
+
+.activeMenu {
+  background: #e0e0e0;
+  color: #222;
+  font-weight: bold;
+}

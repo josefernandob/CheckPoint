@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './PointRegister.module.css';
 
 export default function PointRegister() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [currentTime, setCurrentTime] = useState(new Date());
   const [userId, setUserId] = useState(["", "", "", ""]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -75,17 +76,17 @@ export default function PointRegister() {
       <div className={styles.container}>
         <div className={styles.sidebar}>
           <div className={styles.topMenu}>
-            <div className={styles.menuItem} onClick={() => navigate('/registrar')}>
+            <div className={`${styles.menuItem} ${location.pathname === '/registrar' ? styles.activeMenu : ''}`} onClick={() => navigate('/registrar')}>
               <i className="fas fa-calendar-alt"></i> Registrar Ponto
             </div>
-            <div className={styles.menuItem} onClick={() => navigate('/banco-horas')}>
+            <div className={`${styles.menuItem} ${location.pathname === '/banco-horas' ? styles.activeMenu : ''}`} onClick={() => navigate('/banco-horas')}>
               <i className="fas fa-stopwatch"></i> Banco de Horas
             </div>
-            <div className={styles.menuItem} onClick={() => navigate('/relatorio')}>
+            <div className={`${styles.menuItem} ${location.pathname === '/relatorio' ? styles.activeMenu : ''}`} onClick={() => navigate('/relatorio')}>
               <i className="fas fa-file-alt"></i> Relatório
             </div>
-            <div className={styles.menuItem} onClick={() => navigate('/corrigir-ponto')}>
-              <i className=" fas fa-calculator"></i> Corrigir Ponto
+            <div className={`${styles.menuItem} ${location.pathname === '/corrigir-ponto' ? styles.activeMenu : ''}`} onClick={() => navigate('/corrigir-ponto')}>
+              <i className="fas fa-calculator"></i> Corrigir Ponto
             </div>
             <div className={styles.menuSpacer}></div>
           </div>

@@ -232,17 +232,18 @@
   background-color: #f5f5f5;
 }
 
-/* Segunda Tabela (formulário de correção) */
 .tabelaWrapperPequena {
   flex: 1;
   min-width: 35%;
+  margin-left: 20px;
 }
 
 .formularioCorrecao {
   background-color: white;
-  padding: 20px;
+  padding: 28px; 
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .campoFormulario {
@@ -280,6 +281,34 @@
   font-size: 16px;
   resize: vertical;
   min-height: 80px;
+}
+
+/* Campo de anexo */
+.campoAnexo {
+  margin-bottom: 15px;
+}
+
+.inputAnexo {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 16px;
+  border: none;
+  background: none;
+}
+
+.inputAnexo::file-selector-button {
+  background-color: #38CF56;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.inputAnexo::file-selector-button:hover {
+  background-color: #2fab45;
 }
 
 /* Campos de data e hora separados */
@@ -346,4 +375,10 @@ input:invalid {
 
 input:focus:invalid {
   outline-color: #ff4444;
+}
+
+.activeMenu {
+  background: #e0e0e0;
+  color: #222;
+  font-weight: bold;
 }
