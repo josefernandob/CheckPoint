@@ -152,7 +152,7 @@
 /* Main Content */
 .mainContent {
   flex: 1;
-  padding: 40px;
+  padding: 25px;
   background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
@@ -160,7 +160,7 @@
   overflow-y: auto;
 }
 
-/* Container do título com detalhe verde */
+/* Container do título com detalhe verde - MODIFICADO PARA PADRONIZAÇÃO */
 .tituloContainer {
   width: 100%;
   max-width: 1200px;
@@ -172,6 +172,7 @@
   align-items: center;
   gap: 20px;
   position: relative;
+  width: 100%;
 }
 
 .detalheVerde {
@@ -180,12 +181,17 @@
   background-color: #38CF56;
 }
 
+/* Título padronizado como na página anterior */
 .tableTitle {
   font-size: 24px;
   font-weight: 600;
   white-space: nowrap;
+  color: #333;
+  margin-bottom: 0;
+  font-family: "Istok Web", sans-serif;
 }
 
+/* Seletor de mês padronizado */
 .selectMes {
   padding: 8px 12px;
   font-size: 16px;

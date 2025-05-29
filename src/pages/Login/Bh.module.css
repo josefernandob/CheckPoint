@@ -176,13 +176,12 @@
 }
 
 .bhTitle {
-  color: #333;
-  font-size: 20px;
-  margin-bottom: 0;
-  font-weight: bold; /* Alterado de normal para bold */
-  font-family: "Istok Web", sans-serif;
-  letter-spacing: 1px;
+  font-size: 24px;
+  font-weight: 600;
   white-space: nowrap;
+  color: #333;
+  margin-bottom: 0;
+  font-family: "Istok Web", sans-serif;
 }
 
 .selectMes {

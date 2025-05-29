@@ -4,7 +4,7 @@
   border-radius: 15px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 100%;
-  max-width: 442px ; 
+  max-width: 442px;
   min-height: 320px;
   display: flex;
   flex-direction: column;
@@ -49,6 +49,7 @@
   align-items: center;
   position: relative;
   width: 100%;
+  margin-bottom: 25px;
 }
 
 .User img,
@@ -57,6 +58,7 @@
   left: 15px;
   width: 20px;
   height: 20px;
+  z-index: 1;
 }
 
 .User p,
@@ -66,6 +68,7 @@
   color: var(--verde-01);
   font-size: 1.2rem;
   margin: 0;
+  z-index: 1;
 }
 
 .User input,
@@ -78,6 +81,22 @@
   background-color: rgba(56, 207, 86, 0.3);
   color: rgba(0, 0, 0, 0.7);
   font-family: 'Istok Web', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.errorInput {
+  border: 1px solid #ff4444 !important;
+  background-color: rgba(255, 68, 68, 0.1) !important;
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: -20px;
+  left: 60px;
+  color: #ff4444;
+  font-size: 0.75rem;
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 400;
 }
 
 .linksContainer {
@@ -95,11 +114,13 @@
   font-size: 0.75rem;
   color: var(--allblack);
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .linkSenha:hover,
 .cadas:hover {
   text-decoration: underline;
+  color: var(--verde-01);
 }
 
 .checkboxArea {
@@ -112,6 +133,7 @@
   color: var(--allblack);
   margin-left: 5px;
   margin-top: -50px;
+  cursor: pointer;
 }
 
 .checkboxArea input {
@@ -129,18 +151,35 @@
   border-radius: 6px;
   font-family: 'Istok Web', sans-serif;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
   margin-top: 20px;
   transition: background-color 0.3s;
+  width: 100%;
 }
 
 .loginBox button:hover {
   background-color: #2fa84e;
 }
 
+.loginBox button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
 @media (max-width: 480px) {
   .loginBox {
     padding: 30px 20px;
     width: 90%;
+  }
+  
+  .User input,
+  .Senha input {
+    padding: 12px 12px 12px 55px;
+  }
+  
+  .errorMessage {
+    font-size: 0.65rem;
+    left: 55px;
   }
 }
