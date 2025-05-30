@@ -42,9 +42,7 @@ export default function Perfil() {
             <div className={styles.profileHeader} onClick={() => navigate('/perfil')} tabIndex={0}>
               <i className="fas fa-user"></i> Perfil
             </div>
-            <div className={styles.profileMenuItem} onClick={() => navigate('/configuracoes')} tabIndex={0}>
-              <i className="fas fa-cog"></i> Configurações
-            </div>
+            
             <div className={styles.profileMenuItem} onClick={() => navigate('/logout')} tabIndex={0}>
               <i className="fas fa-sign-out-alt"></i> Sair
             </div>

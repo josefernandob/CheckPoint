@@ -133,18 +133,7 @@ export default function InitialPage() {
             >
               <i className="fas fa-user"></i> Perfil
             </div>
-            <div
-              className={styles.profileMenuItem}
-              onClick={() => navigate('/configuracoes')}
-              role="button"
-              tabIndex={0}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') navigate('/configuracoes');
-              }}
-              style={{ cursor: 'pointer' }}
-            >
-              <i className="fas fa-cog"></i> Configurações
-            </div>
+            
             <div
               className={styles.profileMenuItem}
               onClick={handleLogoutClick}

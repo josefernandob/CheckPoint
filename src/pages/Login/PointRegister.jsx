@@ -103,17 +103,7 @@ export default function PointRegister() {
             >
               <i className="fas fa-user"></i> Perfil
             </div>
-            <div
-              className={styles.profileMenuItem}
-              onClick={() => navigate('/configuracoes')}
-              role="button"
-              tabIndex={0}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') navigate('/configuracoes');
-              }}
-            >
-              <i className="fas fa-cog"></i> Configurações
-            </div>
+            
             <div className={styles.profileMenuItem} onClick={() => navigate('/')}>
               <i className="fas fa-sign-out-alt"></i> Sair
             </div>
