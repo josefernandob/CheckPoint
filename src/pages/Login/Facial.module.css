@@ -402,3 +402,9 @@
 .sendButton:hover {
   background-color: #2eaa46;
 }
+
+.activeMenu {
+  background: #e0e0e0;
+  color: #222;
+  font-weight: bold;
+}

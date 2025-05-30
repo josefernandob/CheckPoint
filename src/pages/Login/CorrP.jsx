@@ -7,6 +7,7 @@ export default function CorrP() {
   const [mesSelecionado, setMesSelecionado] = useState('04');
   const [anoSelecionado, setAnoSelecionado] = useState('2025');
   const [nomeArquivoSelecionado, setNomeArquivoSelecionado] = useState('');
+  const [showSolicitado, setShowSolicitado] = useState(false);
 
   function handleFileChange(e) {
     if (e.target.files && e.target.files[0]) {
@@ -31,21 +32,21 @@ export default function CorrP() {
     <div className={styles.appContainer}>
       <div className={styles.header}>
         <div className={styles.headerLeft}>
-  <img
-    src="/src/assets/Nearpod.svg"
-    className={styles.logo}
-    alt="Logo"
-    style={{ cursor: 'pointer' }}
-    onClick={() => navigate('/initial')}
-  />
-  <span
-    className={styles.logoText}
-    style={{ cursor: 'pointer' }}
-    onClick={() => navigate('/initial')}
-  >
-    CheckPoint
-  </span>
-</div>
+          <img
+            src="/src/assets/Nearpod.svg"
+            className={styles.logo}
+            alt="Logo"
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/initial')}
+          />
+          <span
+            className={styles.logoText}
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/initial')}
+          >
+            CheckPoint
+          </span>
+        </div>
         <div className={styles.userInfo}>
           <span className={styles.userName}>Rodrigo Vieira de Morais</span>
           <div className={styles.userAvatar}>
@@ -76,7 +77,7 @@ export default function CorrP() {
             <div className={styles.profileHeader} onClick={() => navigate('/perfil')} tabIndex={0}>
               <i className="fas fa-user"></i> Perfil
             </div>
-            
+
             <div className={styles.profileMenuItem} onClick={() => navigate('/logout')} tabIndex={0}>
               <i className="fas fa-sign-out-alt"></i> Sair
             </div>
@@ -219,7 +220,29 @@ export default function CorrP() {
                   </label>
                   <span style={{ marginLeft: 12 }}>{nomeArquivoSelecionado}</span>
                 </div>
-                <button className={styles.actionButton}>SOLICITAR CORREÇÃO</button>
+                <button
+                  className={styles.actionButton}
+                  onClick={() => setShowSolicitado(true)}
+                >
+                  SOLICITAR CORREÇÃO
+                </button>
+
+                {showSolicitado && (
+                  <div className={styles.modalOverlay}>
+                    <div className={styles.modalBox}>
+                      <h2 className={styles.modalTitle}>Solicitação efetuada, aguarde confirmação do setor</h2>
+                      <div className={styles.modalActions}>
+                        <button
+                          className={styles.btnCancel}
+                          onClick={() => setShowSolicitado(false)}
+                          aria-label="Fechar"
+                        >
+                          Voltar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -9,21 +9,21 @@ export default function Perfil() {
     <div className={styles.appContainer}>
       <div className={styles.header}>
         <div className={styles.headerLeft}>
-  <img
-    src="/src/assets/Nearpod.svg"
-    className={styles.logo}
-    alt="Logo"
-    style={{ cursor: 'pointer' }}
-    onClick={() => navigate('/initial')}
-  />
-  <span
-    className={styles.logoText}
-    style={{ cursor: 'pointer' }}
-    onClick={() => navigate('/initial')}
-  >
-    CheckPoint
-  </span>
-</div>
+          <img
+            src="/src/assets/Nearpod.svg"
+            className={styles.logo}
+            alt="Logo"
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/initial')}
+          />
+          <span
+            className={styles.logoText}
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/initial')}
+          >
+            CheckPoint
+          </span>
+        </div>
         <div className={styles.userInfo}>
           <span className={styles.userName}>Rodrigo Vieira de Morais</span>
           <div className={styles.userAvatar}>
@@ -54,7 +54,7 @@ export default function Perfil() {
             <div className={styles.profileHeader} onClick={() => navigate('/perfil')} tabIndex={0}>
               <i className="fas fa-user"></i> Perfil
             </div>
-            
+
             <div className={styles.profileMenuItem} onClick={() => navigate('/logout')} tabIndex={0}>
               <i className="fas fa-sign-out-alt"></i> Sair
             </div>
@@ -99,7 +99,10 @@ export default function Perfil() {
                 <i className="fas fa-user-circle"></i>
               </div>
               <h3 className={styles.uploadTitle}>Faça upload da sua foto de perfil</h3>
-              <button className={styles.uploadButton}>
+              <button
+                className={styles.uploadButton}
+                onClick={() => navigate('/Error404')}
+              >
                 Fazer upload
               </button>
             </div>
