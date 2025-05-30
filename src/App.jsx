@@ -13,10 +13,10 @@ import Bh from './pages/Login/Bh';
 import Relat from './pages/Login/Relat';
 import CorrP from './pages/Login/CorrP';
 import Profile from './pages/Login/Profile';
-import Settings from './pages/Login/Settings';
 import Facial from './pages/Login/Facial';
 import RegisDone from './pages/Login/RegisDone';
 import RegisFail from './pages/Login/RegisFail';
+import Error404 from './pages/Login/Error404';
 
 
 
@@ -33,12 +33,13 @@ function App() {
           <Route path="/codigo-recuperacao" element={<CodRec />} /> 
           <Route path="/redsen" element={<RedSen />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/Error404" element={<Error404 />} />
 
       <Route path="/banco-horas" element={<Bh />} />
      <Route path="/relatorio" element={<Relat />} />
       <Route path="/corrigir-ponto" element={<CorrP />} />
       <Route path="/perfil" element={<Profile />} />
-      <Route path="/configuracoes" element={<Settings />} />
+    
       <Route path="/facial" element={<Facial />} />
        <Route path="/regisdone" element={<RegisDone />} />  
        <Route path="/RegisFail" element={<RegisFail />} />      

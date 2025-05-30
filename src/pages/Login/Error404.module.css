@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+
+:root {
+  --branquinho: #ffffff;
+  --verde-01: #38CF56;
+  --verde-02: #2db149;
+  --verde-login: #47A65A;
+  --allblack: #000000;
+}
+
+.pageWrapper {
+  background: url('./PlanoFundo.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cadastroBox {
+  background-color: var(--branquinho);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 442px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.Header h2 {
+  font-size: 1.5rem;
+  color: var(--allblack);
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.instruction {
+  color: #000;
+  font-family: "Istok Web";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 380px;
+  text-align: left;
+}
+
+.inst2 {
+  color: #000;
+  font-family: "Istok Web";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 380px;
+  text-align: left;
+}
+
+.buttonGroup {
+  
+  margin-left: 90px;
+}
