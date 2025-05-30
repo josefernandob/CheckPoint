@@ -224,8 +224,27 @@ export default function InitialPage() {
                 <div className={styles.detailText}>
                   <i className={`fas fa-times-circle ${styles.detailIcon}`}></i> Faltas
                 </div>
-                <div className={styles.hoursValue}>00:00</div>
+                <div className={styles.hoursValue}>02</div>
               </div>
+            </div>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.sectionTitle}>
+              <i className="fas fa-map-marker-alt" style={{ color: '#38CF56', marginRight: 8 }}></i>
+              Localização
+            </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: 16 }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.1405546585074!2d-34.89436952392001!3d-8.087145280864329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1978785770b5%3A0x6e7e940e3b23bb67!2sSiDi!5e0!3m2!1spt-BR!2sbr!4v1748561438798!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="30vw"
+                style={{ border: 0, borderRadius: 12, minHeight: 220, maxHeight: 350 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização SiDi"
+              />
             </div>
           </div>
         </div>
