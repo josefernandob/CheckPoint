@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './Facial.module.css';
 
 export default function Facial() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isRecognizing, setIsRecognizing] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleRegister = () => {
     setIsRecognizing(true);
 
-    // Simula o processo de reconhecimento
+
     setTimeout(() => {
       setShowConfirmation(true);
       setIsRecognizing(false);
 
-      // Redireciona após 2 segundos
       setTimeout(() => {
         navigate('/registrar');
       }, 2000);
@@ -56,7 +56,7 @@ export default function Facial() {
         <div className={styles.sidebar}>
           <div className={styles.topMenu}>
             <div
-              className={styles.menuItem}
+              className={`${styles.menuItem} ${location.pathname === '/registrar' ? styles.activeMenu : ''}`}
               onClick={() => navigate('/registrar')}
             >
               <i className="fas fa-calendar-alt"></i> Registrar Ponto
@@ -93,17 +93,6 @@ export default function Facial() {
               }}
             >
               <i className="fas fa-user"></i> Perfil
-            </div>
-            <div
-              className={styles.profileMenuItem}
-              onClick={() => navigate('/configuracoes')}
-              role="button"
-              tabIndex={0}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') navigate('/configuracoes');
-              }}
-            >
-              <i className="fas fa-cog"></i> Configurações
             </div>
             <div
               className={styles.profileMenuItem}

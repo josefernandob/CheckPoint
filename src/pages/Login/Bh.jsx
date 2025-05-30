@@ -6,6 +6,32 @@ export default function Bh() {
   const navigate = useNavigate();
   const [dataSelecionada, setDataSelecionada] = useState('2025-04-22');
 
+  const dados = {
+    data: '01/04/2025',
+    entrada: '07:35:05',
+    intervaloSaida: '12:00:06',
+    intervaloEntrada: '13:05:00',
+    saida: '17:00:01',
+    horaExtra: '00:00:00'
+  };
+
+  function baixarExtrato() {
+    const conteudo =
+      'DATA\tENTRADA\tINTERVALO SAÍDA\tINTERVALO ENTRADA\tSAÍDA\tHORA EXTRA\n' +
+      `${dados.data}\t${dados.entrada}\t${dados.intervaloSaida}\t${dados.intervaloEntrada}\t${dados.saida}\t${dados.horaExtra}`;
+
+    const blob = new Blob([conteudo], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'extrato.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <div className={styles.appContainer}>
       <div className={styles.header}>
@@ -121,7 +147,7 @@ export default function Bh() {
               </div>
             </div>
 
-            <button className={styles.actionButton}>
+            <button className={styles.actionButton} onClick={baixarExtrato}>
               BAIXAR EXTRATO
             </button>
           </div>
