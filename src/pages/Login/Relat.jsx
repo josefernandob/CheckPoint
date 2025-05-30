@@ -54,9 +54,21 @@ export default function Relat() {
     <div className={styles.appContainer}>
       <div className={styles.header}>
         <div className={styles.headerLeft}>
-          <img src="/src/assets/Nearpod.svg" className={styles.logo} alt="Logo" />
-          <span className={styles.logoText}>CheckPoint</span>
-        </div>
+  <img
+    src="/src/assets/Nearpod.svg"
+    className={styles.logo}
+    alt="Logo"
+    style={{ cursor: 'pointer' }}
+    onClick={() => navigate('/initial')}
+  />
+  <span
+    className={styles.logoText}
+    style={{ cursor: 'pointer' }}
+    onClick={() => navigate('/initial')}
+  >
+    CheckPoint
+  </span>
+</div>
         <div className={styles.userInfo}>
           <span className={styles.userName}>Rodrigo Vieira de Morais</span>
           <div className={styles.userAvatar}>

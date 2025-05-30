@@ -9,12 +9,12 @@ export default function Facial() {
 
   const handleRegister = () => {
     setIsRecognizing(true);
-    
+
     // Simula o processo de reconhecimento
     setTimeout(() => {
       setShowConfirmation(true);
       setIsRecognizing(false);
-      
+
       // Redireciona após 2 segundos
       setTimeout(() => {
         navigate('/registrar');
@@ -31,8 +31,16 @@ export default function Facial() {
             src="/src/assets/Nearpod.svg"
             className={styles.logo}
             alt="Logo"
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/initial')}
           />
-          <span className={styles.logoText}>CheckPoint</span>
+          <span
+            className={styles.logoText}
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/initial')}
+          >
+            CheckPoint
+          </span>
         </div>
         <div className={styles.userInfo}>
           <span className={styles.userName}>Rodrigo Vieira de Morais</span>
@@ -115,7 +123,7 @@ export default function Facial() {
         <div className={styles.mainContent}>
           <div className={styles.facialRecognition}>
             <h2>RECONHECIMENTO FACIAL</h2>
-            
+
             {/* Área da câmera com confirmação */}
             <div className={styles.cameraPreview}>
               <div className={styles.cameraPlaceholder}>
@@ -126,7 +134,7 @@ export default function Facial() {
                 )}
               </div>
             </div>
-            
+
             {/* Dicas (mantido igual) */}
             <div className={styles.tips}>
               <h3>DICAS</h3>
@@ -136,12 +144,11 @@ export default function Facial() {
                 <li>Fique parado: Centralize o rosto e não se mova até o registro ser feito</li>
               </ul>
             </div>
-            
+
             {/* Botão com estados controlados */}
-            <button 
-              className={`${styles.actionButton} ${
-                showConfirmation ? styles.confirmedButton : ''
-              }`}
+            <button
+              className={`${styles.actionButton} ${showConfirmation ? styles.confirmedButton : ''
+                }`}
               onClick={handleRegister}
               disabled={isRecognizing || showConfirmation}
             >
