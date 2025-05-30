@@ -1,9 +1,31 @@
 :root {
---verde-01: #47A65A;
---verde-02: #38CF56;
---allblack: #000000;
---cinzinha: #515650;
---branquinho: #FFFFFF;
+    --verde-01: #47A65A;
+    --verde-02: #38CF56;
+    --allblack: #000000;
+    --cinzinha: #515650;
+    --branquinho: #FFFFFF;
 
 
+}
+
+.actionButton {
+    background-color: var(--verde-01, #38CF56);
+    color: var(--branquinho, #fff);
+    border: none;
+    border-radius: 6px;
+    font-family: 'Istok Web', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px 24px;
+    transition: background-color 0.3s;
+}
+
+.actionButton:hover:not(:disabled) {
+    background-color: #2fa84e;
+}
+
+.actionButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }

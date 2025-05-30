@@ -4,8 +4,17 @@ import styles from './CorrP.module.css';
 
 export default function CorrP() {
   const navigate = useNavigate();
-  const [mesSelecionado, setMesSelecionado] = useState('04'); // Abril
+  const [mesSelecionado, setMesSelecionado] = useState('04');
   const [anoSelecionado, setAnoSelecionado] = useState('2025');
+  const [nomeArquivoSelecionado, setNomeArquivoSelecionado] = useState('');
+
+  function handleFileChange(e) {
+    if (e.target.files && e.target.files[0]) {
+      setNomeArquivoSelecionado(e.target.files[0].name);
+    } else {
+      setNomeArquivoSelecionado('');
+    }
+  }
 
   const diasNoMes = new Date(anoSelecionado, parseInt(mesSelecionado), 0).getDate();
   const dias = Array.from({ length: diasNoMes }, (_, i) => {
@@ -177,9 +186,30 @@ export default function CorrP() {
                 </div>
                 <div className={`${styles.campoFormulario} ${styles.campoAnexo}`}>
                   <label htmlFor="anexo">Anexar arquivo (ex: atestado médico)</label>
-                  <input type="file" id="anexo" className={styles.inputAnexo} />
+                  <input
+                    type="file"
+                    id="anexo"
+                    className={styles.inputAnexo}
+                    style={{ display: 'none' }}
+                    onChange={handleFileChange}
+                  />
+                  <label
+                    htmlFor="anexo"
+                    className="actionButton"
+                    style={{
+                      display: 'inline-block',
+                      cursor: 'pointer',
+                      marginTop: 4,
+                      padding: '6px 14px',
+                      fontSize: '0.95rem',
+                      borderRadius: 4
+                    }}
+                  >
+                    Escolher arquivo
+                  </label>
+                  <span style={{ marginLeft: 12 }}>{nomeArquivoSelecionado}</span>
                 </div>
-                <button className={styles.botaoSolicitar}>SOLICITAR CORREÇÃO</button>
+                <button className={styles.actionButton}>SOLICITAR CORREÇÃO</button>
               </div>
             </div>
           </div>

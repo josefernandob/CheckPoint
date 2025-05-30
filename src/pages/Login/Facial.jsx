@@ -139,7 +139,7 @@ export default function Facial() {
             
             {/* Botão com estados controlados */}
             <button 
-              className={`${styles.registerButton} ${
+              className={`${styles.actionButton} ${
                 showConfirmation ? styles.confirmedButton : ''
               }`}
               onClick={handleRegister}

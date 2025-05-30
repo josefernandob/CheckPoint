@@ -123,7 +123,7 @@ export default function Bh() {
               </div>
             </div>
 
-            <button className={styles.downloadButton}>
+            <button className={styles.actionButton}>
               BAIXAR EXTRATO
             </button>
           </div>
