@@ -77,8 +77,16 @@ export default function InitialPage() {
             src="/src/assets/Nearpod.svg"
             className={styles.logo}
             alt="Logo"
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/initial')}
           />
-          <span className={styles.logoText}>CheckPoint</span>
+          <span
+            className={styles.logoText}
+            style={{ cursor: 'pointer' }}
+            onClick={() => navigate('/initial')}
+          >
+            CheckPoint
+          </span>
         </div>
         <div className={styles.userInfo}>
           <span className={styles.userName}>Rodrigo Vieira de Morais</span>
@@ -133,7 +141,7 @@ export default function InitialPage() {
             >
               <i className="fas fa-user"></i> Perfil
             </div>
-            
+
             <div
               className={styles.profileMenuItem}
               onClick={handleLogoutClick}
